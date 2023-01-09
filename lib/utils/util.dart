@@ -46,7 +46,7 @@ class Util {
       snackPosition: SnackPosition.BOTTOM,
       titleText: Text(
         message,
-        style: AppTextStyle.body1Bold.copyWith(color: AppColors.primary),
+        style: AppTextStyle.h3.copyWith(color: AppColors.primary),
       ),
       messageText: const SizedBox(),
       padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
@@ -66,7 +66,7 @@ class Util {
             flex: 5,
             child: Text(
               message,
-              style: AppTextStyle.body1Bold.copyWith(
+              style: AppTextStyle.h3.copyWith(
                 color: AppColors.primary,
                 fontWeight: FontWeight.w400,
               ),
@@ -76,7 +76,7 @@ class Util {
             onPressed: () {},
             child: Text(
               'view_last_post'.tr,
-              style: AppTextStyle.body1Bold,
+              style: AppTextStyle.h3,
             ),
           ),
           Image.asset(
