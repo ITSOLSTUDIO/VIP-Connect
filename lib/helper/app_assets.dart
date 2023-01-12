@@ -19,6 +19,10 @@ class AppAssets {
   static const String selectedCircleSvg = "${assetsSvg}selectedCircle.svg";
   static const String unselectedCircleSvg = "${assetsSvg}unselectedCircle.svg";
 
+  //Login
+  static const String emailFillSvg = "${assetsSvg}emailFill.svg";
+  static const String lockFillSvg = "${assetsSvg}lockFill.svg";
+
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";
 }

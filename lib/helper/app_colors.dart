@@ -16,10 +16,12 @@ class AppColors {
 
   //Text Color
   static const Color primaryText = Color(0xFF001833);
+  static const Color hintText = Color(0xFF484848);
+  static const Color blackHalfText = Color(0xFF818181);
   static const Color disableText = Color(0xFF858494);
 
   static const Color disableButton = Colors.white24;
-  static const Color button = Color(0xFF2B2B2B);
+  static const Color button = Color(0xFF484848);
 }
 
 ColorScheme kColorScheme = const ColorScheme.light(

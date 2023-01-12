@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:vip_connect/config/routes.dart';
 import 'package:vip_connect/constants.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
@@ -10,8 +12,28 @@ import 'package:vip_connect/screens/components/background_design.dart';
 import 'package:vip_connect/screens/components/common_button.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({Key? key}) : super(key: key);
+class OnBoardingScreen extends StatefulWidget {
+  OnBoardingScreen({Key? key}) : super(key: key);
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  final PageController controller = PageController();
+
+  late int currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    currentPage = 0;
+    controller.addListener(() {
+      setState(() {
+        currentPage = controller.page!.toInt();
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,33 +49,40 @@ class OnBoardingScreen extends StatelessWidget {
               child: Stack(
                 children: [
                   PageView(
+                    controller: controller,
                     children: [
-                      SvgPicture.asset(
-                        AppAssets.onBoarding1Svg,
-                        height: 380.h,
-                        width: 254.w,
+                      Center(
+                        child: SvgPicture.asset(
+                          AppAssets.onBoarding1Svg,
+                          height: 380.h,
+                          width: 254.w,
+                        ),
                       ),
-                      SvgPicture.asset(
-                        AppAssets.onBoarding2Svg,
-                        height: 247.h,
-                        width: 270.w,
+                      Center(
+                        child: SvgPicture.asset(
+                          AppAssets.onBoarding2Svg,
+                          height: 247.h,
+                          width: 270.w,
+                        ),
                       ),
-                      SvgPicture.asset(
-                        AppAssets.onBoarding3Svg,
-                        height: 264.h,
-                        width: 318.w,
+                      Center(
+                        child: SvgPicture.asset(
+                          AppAssets.onBoarding3Svg,
+                          height: 264.h,
+                          width: 318.w,
+                        ),
                       ),
                     ],
                   ),
-                  Positioned(
-                    top: 16.h,
-                    right: 59.w,
-                    child: Image.asset(
-                      AppAssets.logoImg,
-                      height: 43.h,
-                      width: 76.w,
-                    ),
-                  ),
+                  // Positioned(
+                  //   top: 16.h,
+                  //   right: 59.w,
+                  //   child: Image.asset(
+                  //     AppAssets.logoImg,
+                  //     height: 43.h,
+                  //     width: 76.w,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -61,24 +90,28 @@ class OnBoardingScreen extends StatelessWidget {
               height: 42.h,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                  AppAssets.unselectedCircleSvg,
-                  color: AppColors.white,
+                  currentPage == 0
+                      ? AppAssets.selectedCircleSvg
+                      : AppAssets.unselectedCircleSvg,
                 ),
                 HorizontalSpacer(
                   width: 12.w,
                 ),
                 SvgPicture.asset(
-                  AppAssets.selectedCircleSvg,
-                  color: AppColors.white,
+                  currentPage == 1
+                      ? AppAssets.selectedCircleSvg
+                      : AppAssets.unselectedCircleSvg,
                 ),
                 HorizontalSpacer(
                   width: 12.w,
                 ),
                 SvgPicture.asset(
-                  AppAssets.selectedCircleSvg,
-                  color: AppColors.white,
+                  currentPage == 2
+                      ? AppAssets.selectedCircleSvg
+                      : AppAssets.unselectedCircleSvg,
                 ),
               ],
             ),
@@ -110,7 +143,9 @@ class OnBoardingScreen extends StatelessWidget {
                     isFill: true,
                     isIconVisible: false,
                     iconColor: AppColors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(routeSignUp);
+                    },
                     buttonShouldDisable: false,
                   ),
                   VerticalSpacer(
@@ -127,7 +162,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print("Tapped");
+                          Get.toNamed(routeLogin);
                         },
                         child: Text(
                           " ${AppTexts.login}",

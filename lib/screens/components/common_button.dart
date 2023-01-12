@@ -47,7 +47,7 @@ class CommonButton extends StatelessWidget {
                   ? (buttonShouldDisable)
                       ? AppColors.disableButton
                       : AppColors.button
-                  : Colors.white,
+                  : AppColors.primary,
             ),
           ),
         ),
@@ -62,8 +62,9 @@ class CommonButton extends StatelessWidget {
           Text(
             title,
             style: AppTextStyle.bodyMedium.copyWith(
-              color:
-                  buttonShouldDisable ? AppColors.disableText : AppColors.white,
+              color: buttonShouldDisable
+                  ? AppColors.disableText
+                  : AppColors.primary,
             ),
           ),
           isIconVisible

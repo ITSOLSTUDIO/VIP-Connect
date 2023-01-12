@@ -15,7 +15,7 @@ class AppTextStyle {
     fontFamily: 'Rubik',
     fontSize: kFontSize16,
     fontWeight: FontWeight.w500,
-    color: AppColors.white,
+    color: AppColors.primary,
   );
 
   static final TextStyle bodyRegular = TextStyle(
