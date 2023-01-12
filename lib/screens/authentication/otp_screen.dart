@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:vip_connect/config/routes.dart';
-import 'package:vip_connect/helper/app_assets.dart';
+import 'package:vip_connect/constants.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
 import 'package:vip_connect/screens/components/common_button.dart';
 import 'package:vip_connect/screens/components/custom_appbar.dart';
-import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -31,21 +30,23 @@ class OtpScreen extends StatelessWidget {
                   .copyWith(color: AppColors.disableText),
             ),
             VerticalSpacer(height: 24.h),
-            CustomTextField(
-              mainTitle: AppTexts.enterOtp,
-              hintText: "Your email address",
-              filled: true,
+            OtpTextField(
+              numberOfFields: 4,
+              showFieldAsBox: true,
+              textStyle: AppTextStyle.h3,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              borderColor: AppColors.border,
+              enabledBorderColor: AppColors.border,
+              disabledBorderColor: AppColors.border,
+              borderWidth: 2.w,
+              fieldWidth: 68.w,
               fillColor: AppColors.primary,
-              prefixWidget: Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: SvgPicture.asset(
-                  AppAssets.emailFillSvg,
-                  height: 24.h,
-                  width: 24.h,
-                ),
-              ),
-              onSaved: (String? newValue) {},
-              validator: (String? value) {},
+              filled: true,
+              borderRadius: BorderRadius.circular(kBorderRadius20),
+              onCodeChanged: (String code) {
+                //handle validation or checks here
+              },
+              onSubmit: (String verificationCode) {}, // end onSubmit
             ),
             VerticalSpacer(height: 16.h),
             Row(

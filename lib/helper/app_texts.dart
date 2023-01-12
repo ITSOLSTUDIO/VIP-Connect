@@ -25,6 +25,9 @@ class AppTexts {
   static const String addExperience = "Add Experience";
 
   static const String addIndustry = "Add Industry";
+  static const String addIndustryName = "Add Industry Name";
+  static const String industryName = "Industry Name";
+
   static const String enterEmail = "Enter Email";
   static const String signUpClose = "Signup";
 

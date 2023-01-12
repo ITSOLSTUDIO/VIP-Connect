@@ -70,7 +70,9 @@ class LoginScreen extends StatelessWidget {
               iconData: '',
               isFill: true,
               isIconVisible: false,
-              onPressed: () {},
+              onPressed: () {
+                // Get.toNamed(routeDashboard);
+              },
               iconColor: AppColors.transparent,
               buttonShouldDisable: false,
             ),

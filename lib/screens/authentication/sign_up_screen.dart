@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:vip_connect/config/routes.dart';
+import 'package:vip_connect/constants.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
@@ -10,8 +11,16 @@ import 'package:vip_connect/screens/components/custom_appbar.dart';
 import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  SignUpScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  String dropdownValue = 'Gaming/Casinos';
+  bool addIndustryField = false;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +85,92 @@ class SignUpScreen extends StatelessWidget {
               onSaved: (String? newValue) {},
               validator: (String? value) {},
             ),
+            VerticalSpacer(height: 10.h),
+            Text(
+              AppTexts.addIndustry,
+              style:
+                  AppTextStyle.bodyRegular.copyWith(color: AppColors.primary),
+            ),
+            VerticalSpacer(height: 10.h),
+            DropdownButtonFormField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: AppColors.primary,
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: AppColors.primary,
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                filled: true,
+                fillColor: AppColors.primary,
+              ),
+              dropdownColor: AppColors.primary,
+              value: dropdownValue,
+              onChanged: (String? newValue) {
+                setState(() {
+                  dropdownValue = newValue!;
+                });
+              },
+              items: <String>[
+                'Gaming/Casinos',
+                'Retail/Asset Protection',
+                'Healthcare',
+                'Education'
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                );
+              }).toList(),
+            ),
+            VerticalSpacer(height: 10.h),
+            if (addIndustryField == false)
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    addIndustryField = true;
+                  });
+                },
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      splashRadius: 20.r,
+                      icon: Icon(
+                        Icons.add,
+                        size: 24.r,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                    HorizontalSpacer(width: 2.w),
+                    Text(
+                      AppTexts.addIndustry,
+                      style: AppTextStyle.bodyRegular.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: kFontSize14,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            if (addIndustryField)
+              CustomTextField(
+                mainTitle: AppTexts.addIndustryName,
+                hintText: AppTexts.industryName,
+                filled: true,
+                fillColor: AppColors.primary,
+                onSaved: (String? newValue) {},
+                validator: (String? value) {},
+              ),
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.enterEmail,
