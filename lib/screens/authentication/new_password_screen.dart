@@ -40,7 +40,7 @@ class NewPasswordScreen extends StatelessWidget {
               prefixWidget: Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 child: SvgPicture.asset(
-                  AppAssets.lockFillSvg,
+                  AppAssets.lockSvg,
                   height: 24.h,
                   width: 24.h,
                 ),
@@ -72,7 +72,7 @@ class NewPasswordScreen extends StatelessWidget {
               prefixWidget: Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 child: SvgPicture.asset(
-                  AppAssets.lockFillSvg,
+                  AppAssets.lockSvg,
                   height: 24.h,
                   width: 24.h,
                 ),

@@ -52,11 +52,12 @@ class LoginScreen extends StatelessWidget {
               mainTitle: AppTexts.password,
               hintText: "Your password",
               filled: true,
+              obscureText: true,
               fillColor: AppColors.primary,
               prefixWidget: Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 child: SvgPicture.asset(
-                  AppAssets.lockFillSvg,
+                  AppAssets.lockSvg,
                   height: 24.h,
                   width: 24.h,
                 ),
@@ -71,7 +72,7 @@ class LoginScreen extends StatelessWidget {
               isFill: true,
               isIconVisible: false,
               onPressed: () {
-                // Get.toNamed(routeDashboard);
+                Get.toNamed(routeDashboard);
               },
               iconColor: AppColors.transparent,
               buttonShouldDisable: false,

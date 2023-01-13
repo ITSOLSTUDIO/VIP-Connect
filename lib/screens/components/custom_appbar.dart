@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 
-PreferredSizeWidget customAppBar({required String title}) {
+PreferredSizeWidget customAppBar(
+    {required String title, List<Widget>? action}) {
   return AppBar(
     backgroundColor: AppColors.secondary,
     elevation: 0,
@@ -16,12 +17,13 @@ PreferredSizeWidget customAppBar({required String title}) {
       iconSize: 30,
       icon: const Icon(
         Icons.keyboard_backspace,
-        color: AppColors.primary,
+        color: AppColors.white100,
       ),
     ),
     title: Text(
       title,
-      style: AppTextStyle.h3.copyWith(color: AppColors.primary),
+      style: AppTextStyle.h3.copyWith(color: AppColors.white300),
     ),
+    actions: action,
   );
 }

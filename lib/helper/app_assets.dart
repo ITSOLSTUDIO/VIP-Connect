@@ -3,6 +3,7 @@ import 'package:vip_connect/constants.dart';
 class AppAssets {
   //Images
   static const String logoImg = "${assetsImage}logo.png";
+  static const String dummyPostImg = "${assetsImage}dummyPost.png";
 
   //Svg
   static const String shape1Svg = "${assetsSvg}shape1.svg";
@@ -21,8 +22,28 @@ class AppAssets {
 
   //Login
   static const String emailFillSvg = "${assetsSvg}emailFill.svg";
-  static const String lockFillSvg = "${assetsSvg}lockFill.svg";
+  static const String lockSvg = "${assetsSvg}lock.svg";
 
+  //Dashboard
+  static const String messageSvg = "${assetsSvg}message.svg";
+  static const String addSquareSvg = "${assetsSvg}addSquare.svg";
+  static const String videoCameraSvg = "${assetsSvg}videoCamera.svg";
+  static const String fileSvg = "${assetsSvg}file.svg";
+  static const String menuSvg = "${assetsSvg}menu.svg";
+  static const String locationSvg = "${assetsSvg}location.svg";
+  static const String closeSvg = "${assetsSvg}close.svg";
+  static const String imageSvg = "${assetsSvg}image.svg";
+  static const String shareSvg = "${assetsSvg}share.svg";
+  static const String moreVerticalSvg = "${assetsSvg}moreVertical.svg";
+  static const String messageSquareSvg = "${assetsSvg}messageSquare.svg";
+  static const String bellSvg = "${assetsSvg}bell.svg";
+  static const String sendSvg = "${assetsSvg}send.svg";
+  static const String maskGroupSvg = "${assetsSvg}maskGroup.svg";
+  static const String maskGroup1Svg = "${assetsSvg}maskGroup1.svg";
+  static const String maskGroup2Svg = "${assetsSvg}maskGroup2.svg";
+  static const String maskGroup3Svg = "${assetsSvg}maskGroup3.svg";
+  static const String maskGroup4Svg = "${assetsSvg}maskGroup4.svg";
+  static const String worldSvg = "${assetsSvg}world.svg";
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";
 }

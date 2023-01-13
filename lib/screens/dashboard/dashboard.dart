@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:vip_connect/controller/dashboard_controller.dart';
+import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/screens/dashboard/screen/arena_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/chats_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen.dart';
@@ -25,6 +27,14 @@ class _DashboardState extends State<Dashboard> {
     const ProfileScreen(),
   ];
 
+  List<String> svgLists = [
+    AppAssets.maskGroup3Svg,
+    AppAssets.messageSvg,
+    AppAssets.addSquareSvg,
+    AppAssets.maskGroup4Svg,
+    AppAssets.menuSvg,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(builder: (dashboardController) {
@@ -38,7 +48,7 @@ class _DashboardState extends State<Dashboard> {
           }
         },
         child: Scaffold(
-          backgroundColor: AppColors.primary,
+          backgroundColor: AppColors.secondary,
           body: IndexedStack(
             index: dashboardController.currentIndex.value,
             children: buildScreens,
@@ -47,24 +57,32 @@ class _DashboardState extends State<Dashboard> {
             height: 82.h,
             width: double.infinity,
             // padding: EdgeInsets.only(right: 18.w, bottom: 30.h),
-            decoration: const BoxDecoration(
-              color: AppColors.primary,
-            ),
-            child: ListView.builder(
-              reverse: true,
-              itemCount: 5,
-              physics: const NeverScrollableScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 8.7.w),
-              itemBuilder: (context, index) => InkWell(
-                onTap: () {},
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.home),
-                ),
+            decoration: BoxDecoration(
+              color: AppColors.black800,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(20.r),
               ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: svgLists.map((e) {
+                int index = svgLists.indexOf(e);
+                return InkWell(
+                  onTap: () {
+                    dashboardController.updateCurrentIndex(index);
+                  },
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: SvgPicture.asset(
+                    svgLists[index],
+                    color: dashboardController.currentIndex.value == index
+                        ? AppColors.white100
+                        : AppColors.dashboardIcons,
+                    height: 24.h,
+                    width: 24.w,
+                  ),
+                );
+              }).toList(),
             ),
           ),
         ),

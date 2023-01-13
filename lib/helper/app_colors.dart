@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   // Brand Colors
   static const Color green = Colors.green;
-  static const Color red = Colors.red;
+  static const Color red = Color(0xFFFF3D00);
   static const Color white = Colors.white;
   static const Color black = Colors.black;
   static const Color transparent = Colors.transparent;
@@ -14,6 +14,12 @@ class AppColors {
   static const Color primary = Color(0xFFF2F3F4);
   static const Color secondary = Color(0xFF080808);
   static const Color border = Color(0xFF5A5A5A);
+  static const Color white100 = Color(0xFFF2F3F4);
+  static const Color white300 = Color(0xFFDADBDC);
+  static const Color white500 = Color(0xFF979899);
+  static const Color black800 = Color(0xFF2B2B2B);
+  static const Color black900 = Color(0xFF080808);
+  static const Color dashboardIcons = Color(0xFF979899);
 
   //Text Color
   static const Color primaryText = Color(0xFF001833);

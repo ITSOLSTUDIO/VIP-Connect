@@ -1,9 +1,11 @@
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:vip_connect/controller/dashboard_controller.dart';
 
 Future<void> init() async {
   // Controller
-  // Get.lazyPut(() => AuthController());
+  Get.lazyPut(() => DashboardController());
 
   await Hive.initFlutter();
 

@@ -7,6 +7,7 @@ import 'package:vip_connect/screens/authentication/otp_screen.dart';
 import 'package:vip_connect/screens/authentication/sign_up_screen.dart';
 import 'package:vip_connect/screens/dashboard/dashboard.dart';
 import 'package:vip_connect/screens/onboarding/onboarding.dart';
+import 'package:vip_connect/screens/post/share_post.dart';
 import 'package:vip_connect/utils/keyboard_dismiss.dart';
 
 import '../screens/splash/splash.dart';
@@ -19,6 +20,7 @@ const routeOtp = '/routeOtp';
 const routeNewPassword = '/routeNewPassword';
 const routeSignUp = '/routeSignUp';
 const routeDashboard = '/routeDashboard';
+const routeSharePost = '/routeSharePost';
 
 class Routes {
   static final routes = [
@@ -34,6 +36,8 @@ class Routes {
         page: () => const TKDismiss(NewPasswordScreen())),
     GetPage(name: routeSignUp, page: () => TKDismiss(SignUpScreen())),
     GetPage(name: routeDashboard, page: () => const TKDismiss(Dashboard())),
+    GetPage(
+        name: routeSharePost, page: () => const TKDismiss(SharePostScreen())),
   ];
 }
 

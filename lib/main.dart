@@ -8,10 +8,12 @@ import 'package:vip_connect/theme/themes.dart';
 import 'package:vip_connect/utils/util.dart';
 
 import 'config/routes.dart';
+import 'helper/get_di.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
+  await init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(const MyApp());
@@ -25,11 +27,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(
-        statusBarColor: AppColors.transparent,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
+        statusBarColor: AppColors.secondary,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
         systemNavigationBarColor: AppColors.secondary,
-        systemNavigationBarIconBrightness: Brightness.light,
+        systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: ScreenUtilInit(
         builder: ((context, child) {

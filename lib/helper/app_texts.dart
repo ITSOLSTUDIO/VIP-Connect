@@ -30,8 +30,21 @@ class AppTexts {
 
   static const String enterEmail = "Enter Email";
   static const String signUpClose = "Signup";
+  static const String searchUserTopic = "Search users,topic";
+  static const String sharePost = "Share Post";
+  static const String writeSomeThing = "Write something...";
+  static const String post = "Post";
+  static const String profile = "Profile";
+  static const String account = "Account";
+  static const String deleteAccount = "Delete Account";
+  static const String logout = "Logout";
+  static const String other = "Other";
 
   //OnBoarding
   static const String onBoarding1 =
       "The Security Industry's End User Community";
+
+  //Dummy Text
+  static const String dummyPostDescription =
+      "With the advancement of technology, we need you to bea part of us to advance the company, Let’s come join us and growth together";
 }

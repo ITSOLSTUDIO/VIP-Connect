@@ -8,17 +8,19 @@ import '../../helper/app_colors.dart';
 class CommonButton extends StatelessWidget {
   final String title, iconData;
   final bool isFill, isIconVisible;
-  final Color iconColor;
+  final Color? iconColor, textColor, borderColor;
   final void Function() onPressed;
   bool buttonShouldDisable = false;
 
   CommonButton({
     Key? key,
+    this.iconColor,
+    this.textColor,
+    this.borderColor,
     required this.title,
     required this.iconData,
     required this.isFill,
     required this.isIconVisible,
-    required this.iconColor,
     required this.onPressed,
     required this.buttonShouldDisable,
   }) : super(key: key);
@@ -46,8 +48,8 @@ class CommonButton extends StatelessWidget {
               color: isFill
                   ? (buttonShouldDisable)
                       ? AppColors.disableButton
-                      : AppColors.button
-                  : AppColors.primary,
+                      : borderColor ?? AppColors.button
+                  : borderColor ?? AppColors.primary,
             ),
           ),
         ),
@@ -64,7 +66,7 @@ class CommonButton extends StatelessWidget {
             style: AppTextStyle.bodyMedium.copyWith(
               color: buttonShouldDisable
                   ? AppColors.disableText
-                  : AppColors.primary,
+                  : textColor ?? AppColors.primary,
             ),
           ),
           isIconVisible
