@@ -33,7 +33,9 @@ class ProfileScreen extends StatelessWidget {
   ];
 
   final List<VoidCallback> accountTileOnTap = [
-    () {},
+    () {
+      Get.toNamed(routeUpdateProfile);
+    },
     () {
       Get.toNamed(routeChangeEmail);
     },
@@ -49,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
 
   final List<String> otherTileSubTitle = [
     AppTexts.inviteYourFriendsSubtitle,
-    AppTexts.privacySubtitle
+    AppTexts.privacyPolicy
   ];
 
   final List<String> otherTileSvgPath = [
@@ -57,7 +59,14 @@ class ProfileScreen extends StatelessWidget {
     AppAssets.questionMarkCircleSvg
   ];
 
-  final List<VoidCallback> otherTileOnTap = [() {}, () {}];
+  final List<VoidCallback> otherTileOnTap = [
+    () {
+      Get.toNamed(routeInviteFriend);
+    },
+    () {
+      Get.toNamed(routePrivacyPolicy);
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +97,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               VerticalSpacer(height: 16.h),
               ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 3,
                   itemBuilder: (context, index) {
@@ -108,6 +118,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               VerticalSpacer(height: 16.h),
               ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 2,
                   itemBuilder: (context, index) {
@@ -125,7 +136,7 @@ class ProfileScreen extends StatelessWidget {
                 isFill: true,
                 isIconVisible: false,
                 onPressed: () {
-                  Get.offAllNamed(routeSplash);
+                  Get.offAllNamed(routeOnBoarding);
                 },
                 buttonShouldDisable: false,
               ),
@@ -138,11 +149,12 @@ class ProfileScreen extends StatelessWidget {
                 isFill: false,
                 isIconVisible: false,
                 onPressed: () {
-                  Get.offAllNamed(routeSplash);
+                  Get.offAllNamed(routeOnBoarding);
                 },
                 iconColor: AppColors.transparent,
                 buttonShouldDisable: false,
               ),
+              VerticalSpacer(height: 22.h),
             ],
           ),
         ),

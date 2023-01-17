@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:vip_connect/config/routes.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
-import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
 import 'package:vip_connect/screens/components/common_button.dart';
 import 'package:vip_connect/screens/components/custom_appbar.dart';
@@ -19,21 +17,15 @@ class ChangePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      appBar: customAppBar(title: AppTexts.newPassword),
+      appBar: customAppBar(title: AppTexts.changePassword),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
-            VerticalSpacer(height: 24.h),
-            Text(
-              "Enter your email and we will send you a link to reset your password.",
-              style: AppTextStyle.bodyRegular
-                  .copyWith(color: AppColors.disableText),
-            ),
-            VerticalSpacer(height: 24.h),
+            VerticalSpacer(height: 64.h),
             CustomTextField(
-              mainTitle: AppTexts.password,
-              hintText: AppTexts.password,
+              mainTitle: AppTexts.newPassword,
+              hintText: AppTexts.yourPassword,
               obscureText: true,
               filled: true,
               fillColor: AppColors.primary,
@@ -48,24 +40,10 @@ class ChangePasswordScreen extends StatelessWidget {
               onSaved: (String? newValue) {},
               validator: (String? value) {},
             ),
-            VerticalSpacer(height: 8.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Must be at least 8 characters.",
-                  style: AppTextStyle.bodyRegular,
-                ),
-                const Icon(
-                  Icons.check,
-                  color: AppColors.primary,
-                ),
-              ],
-            ),
             VerticalSpacer(height: 16.h),
             CustomTextField(
-              mainTitle: AppTexts.confirmPassword,
-              hintText: AppTexts.confirmPassword,
+              mainTitle: AppTexts.confirmNewPassword,
+              hintText: AppTexts.yourPassword,
               obscureText: true,
               filled: true,
               fillColor: AppColors.primary,
@@ -82,12 +60,12 @@ class ChangePasswordScreen extends StatelessWidget {
             ),
             VerticalSpacer(height: 33.h),
             CommonButton(
-              title: AppTexts.resetPassword,
+              title: AppTexts.save,
               iconData: '',
               isFill: true,
               isIconVisible: false,
               onPressed: () {
-                Get.offAllNamed(routeOnBoarding);
+                Get.back();
               },
               iconColor: AppColors.transparent,
               buttonShouldDisable: false,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:vip_connect/config/routes.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_texts.dart';
@@ -18,12 +17,12 @@ class ChangeEmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      appBar: customAppBar(title: AppTexts.resetPassword),
+      appBar: customAppBar(title: AppTexts.changeEmail),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
-            VerticalSpacer(height: 24.h),
+            VerticalSpacer(height: 64.h),
             CustomTextField(
               mainTitle: AppTexts.emailAddress,
               hintText: "Your email address",
@@ -40,14 +39,14 @@ class ChangeEmailScreen extends StatelessWidget {
               onSaved: (String? newValue) {},
               validator: (String? value) {},
             ),
-            VerticalSpacer(height: 165.h),
+            VerticalSpacer(height: 36.h),
             CommonButton(
-              title: AppTexts.resetPassword,
+              title: AppTexts.save,
               iconData: '',
               isFill: true,
               isIconVisible: false,
               onPressed: () {
-                Get.toNamed(routeOtp);
+                Get.back();
               },
               iconColor: AppColors.transparent,
               buttonShouldDisable: false,

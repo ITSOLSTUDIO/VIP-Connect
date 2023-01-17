@@ -78,10 +78,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
             widget.mainTitle,
             style: AppTextStyle.bodyRegular.copyWith(color: AppColors.primary),
           ),
-        if (widget.hideMainTitle == null || widget.hideMainTitle == true)
+        if (widget.hideMainTitle == null || widget.hideMainTitle == false)
           VerticalSpacer(height: 10.h),
         SizedBox(
-          height: 56.h,
+          height: widget.maxLines != null && widget.maxLines! > 1 ? null : 56.h,
           child: TextFormField(
             maxLines: widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
             enabled: widget.enabled,

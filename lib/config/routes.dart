@@ -8,6 +8,9 @@ import 'package:vip_connect/screens/authentication/sign_up_screen.dart';
 import 'package:vip_connect/screens/dashboard/dashboard.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/change_email_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/change_password_screen.dart';
+import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/invite_friend_screen.dart';
+import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/privacy_policy_screen.dart';
+import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/update_profile_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/vip_screen_subscreen/vip_detail.dart';
 import 'package:vip_connect/screens/onboarding/onboarding.dart';
 import 'package:vip_connect/screens/post/share_post.dart';
@@ -27,6 +30,9 @@ const routeSharePost = '/routeSharePost';
 const routeVipDetail = '/routeVipDetail';
 const routeChangeEmail = '/routeChangeEmail';
 const routeChangePassword = '/routeChangePassword';
+const routeInviteFriend = '/routeInviteFriend';
+const routePrivacyPolicy = '/routePrivacyPolicy';
+const routeUpdateProfile = '/routeUpdateProfile';
 
 class Routes {
   static final routes = [
@@ -51,6 +57,14 @@ class Routes {
     GetPage(
         name: routeChangePassword,
         page: () => const TKDismiss(ChangePasswordScreen())),
+    GetPage(
+        name: routeInviteFriend,
+        page: () => const TKDismiss(InviteFriendScreen())),
+    GetPage(
+        name: routePrivacyPolicy,
+        page: () => const TKDismiss(PrivacyPolicyScreen())),
+    GetPage(
+        name: routeUpdateProfile, page: () => TKDismiss(UpdateProfileScreen())),
   ];
 }
 

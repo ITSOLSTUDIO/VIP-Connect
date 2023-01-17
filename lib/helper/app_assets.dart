@@ -52,6 +52,8 @@ class AppAssets {
   static const String backArrowSvg = "${assetsSvg}backArrow.svg";
   static const String questionMarkCircleSvg =
       "${assetsSvg}questionMarkCircle.svg";
+  static const String inviteFriendSvg = "${assetsSvg}inviteFriend.svg";
+  static const String cameraCircleSvg = "${assetsSvg}cameraCircle.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";
