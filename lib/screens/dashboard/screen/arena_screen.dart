@@ -44,7 +44,7 @@ class ArenaScreen extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 16.h),
                           child: SvgPicture.asset(
                             AppAssets.maskGroup2Svg,
-                            color: AppColors.black900,
+                            color: AppColors.secondary,
                             height: 24.h,
                             width: 24.h,
                           ),

@@ -24,7 +24,7 @@ class SharePostScreen extends StatelessWidget {
             splashRadius: 20.r,
             icon: SvgPicture.asset(
               AppAssets.closeSvg,
-              color: AppColors.white100,
+              color: AppColors.primary,
               height: 24.h,
               width: 24.w,
             ))

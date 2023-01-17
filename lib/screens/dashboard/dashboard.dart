@@ -24,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
     const ChatsScreen(),
     Container(),
     const VipScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   List<String> svgLists = [
@@ -76,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
                   child: SvgPicture.asset(
                     svgLists[index],
                     color: dashboardController.currentIndex.value == index
-                        ? AppColors.white100
+                        ? AppColors.primary
                         : AppColors.dashboardIcons,
                     height: 24.h,
                     width: 24.w,

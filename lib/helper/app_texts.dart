@@ -44,7 +44,28 @@ class AppTexts {
   static const String onBoarding1 =
       "The Security Industry's End User Community";
 
+  //Vip Screen
+  static const String vipConnections = "My VIP Connections";
+  static const String searchParticipants = "Search Participants";
+  static const String connect = "Connect";
+
+  //Profile Screen
+  static const String updateProfile = "Update Profile";
+  static const String changeEmailAddress = "Change Email Address";
+  static const String changePassword = "Change Password";
+  static const String inviteYourFriends = "Invite your friends";
+  static const String privacy = "Privacy";
+
+  static const String updateProfileSubtitle = "Update username,location, etc";
+  static const String changeEmailAddressSubtitle = "madias@yahoo.com";
+  static const String changePasswordSubtitle = "last change 1 year ago";
+  static const String inviteYourFriendsSubtitle =
+      "Share link and invite friends";
+  static const String privacySubtitle = "Privacy policy";
+
   //Dummy Text
   static const String dummyPostDescription =
       "With the advancement of technology, we need you to bea part of us to advance the company, Let’s come join us and growth together";
+  static const String lorumIpsum =
+      "Lorem ipsum dolor sit amet consecte tur. Vel mus et id pellentesque at et.Lorem ipsum dolor sit amet consecte tur. Vel mus et id pellentesque at et.Lorem ipsum dolor sit amet consecte tur. Vel mus et id pellentesque at et.";
 }

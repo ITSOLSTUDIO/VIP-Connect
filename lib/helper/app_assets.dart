@@ -4,6 +4,9 @@ class AppAssets {
   //Images
   static const String logoImg = "${assetsImage}logo.png";
   static const String dummyPostImg = "${assetsImage}dummyPost.png";
+  static const String tempProfileImg = "${assetsImage}temp_profile.png";
+  static const String bgImg = "${assetsImage}bg.png";
+  static const String linkedinLogoImg = "${assetsImage}linkedinLogo.png";
 
   //Svg
   static const String shape1Svg = "${assetsSvg}shape1.svg";
@@ -44,6 +47,12 @@ class AppAssets {
   static const String maskGroup3Svg = "${assetsSvg}maskGroup3.svg";
   static const String maskGroup4Svg = "${assetsSvg}maskGroup4.svg";
   static const String worldSvg = "${assetsSvg}world.svg";
+  static const String musicSvg = "${assetsSvg}music.svg";
+  static const String personSvg = "${assetsSvg}person.svg";
+  static const String backArrowSvg = "${assetsSvg}backArrow.svg";
+  static const String questionMarkCircleSvg =
+      "${assetsSvg}questionMarkCircle.svg";
+
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";
 }

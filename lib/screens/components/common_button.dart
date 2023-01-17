@@ -8,15 +8,23 @@ import '../../helper/app_colors.dart';
 class CommonButton extends StatelessWidget {
   final String title, iconData;
   final bool isFill, isIconVisible;
-  final Color? iconColor, textColor, borderColor;
+  final Color? iconColor, textColor, borderColor, bgColor;
   final void Function() onPressed;
   bool buttonShouldDisable = false;
+  double? height, borderRadius;
+  EdgeInsets? padding;
+  TextStyle? style;
 
   CommonButton({
     Key? key,
     this.iconColor,
     this.textColor,
     this.borderColor,
+    this.height,
+    this.padding,
+    this.bgColor,
+    this.borderRadius,
+    this.style,
     required this.title,
     required this.iconData,
     required this.isFill,
@@ -28,25 +36,29 @@ class CommonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all(Size(double.infinity, 56.h)),
+        minimumSize:
+            MaterialStateProperty.all(Size(double.infinity, height ?? 56.h)),
         elevation: MaterialStateProperty.all(0),
         padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(horizontal: 22.w, vertical: 11.h),
+          padding ?? EdgeInsets.symmetric(horizontal: 22.w, vertical: 11.h),
         ),
         //Fixed Size set
         // fixedSize: MaterialStateProperty.all( Size(double.infinity,48)),
         backgroundColor: isFill
-            ? (buttonShouldDisable)
-                ? MaterialStateProperty.all(AppColors.disableButton)
-                : MaterialStateProperty.all(AppColors.button)
+            ? bgColor != null
+                ? MaterialStateProperty.all(bgColor)
+                : (buttonShouldDisable)
+                    ? MaterialStateProperty.all(AppColors.disableButton)
+                    : MaterialStateProperty.all(AppColors.button)
             : MaterialStateProperty.all(AppColors.secondary),
         splashFactory: buttonShouldDisable ? NoSplash.splashFactory : null,
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(kBorderRadius20),
+            borderRadius:
+                BorderRadius.circular(borderRadius ?? kBorderRadius20),
             side: BorderSide(
               color: isFill
-                  ? (buttonShouldDisable)
+                  ? buttonShouldDisable
                       ? AppColors.disableButton
                       : borderColor ?? AppColors.button
                   : borderColor ?? AppColors.primary,
@@ -63,11 +75,12 @@ class CommonButton extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyle.bodyMedium.copyWith(
-              color: buttonShouldDisable
-                  ? AppColors.disableText
-                  : textColor ?? AppColors.primary,
-            ),
+            style: style ??
+                AppTextStyle.bodyMedium.copyWith(
+                  color: buttonShouldDisable
+                      ? AppColors.disableText
+                      : textColor ?? AppColors.primary,
+                ),
           ),
           isIconVisible
               ? Image.asset(

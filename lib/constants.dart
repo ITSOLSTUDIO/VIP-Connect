@@ -36,11 +36,14 @@ final double kFontSize34 = 34.sp;
 
 // Radius
 final double kBorderRadius4 = 4.r;
+final double kBorderRadius6 = 6.r;
 final double kBorderRadius8 = 8.r;
 final double kBorderRadius10 = 10.r;
+final double kBorderRadius11 = 11.r;
+
 final double kBorderRadius16 = 16.r;
 final double kBorderRadius20 = 20.r;
-
+final double kBorderRadius22 = 22.r;
 final double kBorderRadius24 = 24.r;
 final double kBorderRadius40 = 40.r;
 

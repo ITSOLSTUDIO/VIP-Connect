@@ -24,4 +24,51 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.button,
   );
+
+  static final TextStyle rubik12_600 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
+  );
+
+  static final TextStyle popping24_600 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
+  );
+
+  static final TextStyle popping18_400 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize18,
+    fontWeight: FontWeight.w400,
+    color: AppColors.primary,
+  );
+
+  static final TextStyle popping16_400 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.primary,
+  );
+
+  static final TextStyle popping14_600 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
+  );
+  static final TextStyle popping12_400 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.primary,
+  );
+  static final TextStyle popping12_300 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: kFontSize12,
+    fontWeight: FontWeight.w300,
+    color: AppColors.primary,
+  );
 }
