@@ -30,6 +30,7 @@ class AppAssets {
   //Dashboard
   static const String messageSvg = "${assetsSvg}message.svg";
   static const String addSquareSvg = "${assetsSvg}addSquare.svg";
+  static const String plusSvg = "${assetsSvg}plus.svg";
   static const String videoCameraSvg = "${assetsSvg}videoCamera.svg";
   static const String fileSvg = "${assetsSvg}file.svg";
   static const String menuSvg = "${assetsSvg}menu.svg";
@@ -54,6 +55,13 @@ class AppAssets {
       "${assetsSvg}questionMarkCircle.svg";
   static const String inviteFriendSvg = "${assetsSvg}inviteFriend.svg";
   static const String cameraCircleSvg = "${assetsSvg}cameraCircle.svg";
+  static const String micSvg = "${assetsSvg}mic.svg";
+  static const String smileSvg = "${assetsSvg}smile.svg";
+  static const String attachmentSvg = "${assetsSvg}attachment.svg";
+  static const String crossCircleSvg = "${assetsSvg}crossCircle.svg";
+  static const String onlineUserSvg = "${assetsSvg}onlineUser.svg";
+  static const String checkmarkCircleSvg = "${assetsSvg}checkmarkCircle.svg";
+  static const String checkmarkSvg = "${assetsSvg}checkmark.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";

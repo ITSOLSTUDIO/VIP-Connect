@@ -22,6 +22,7 @@ final double kFontSize8 = 8.sp;
 final double kFontSize10 = 10.sp;
 final double kFontSize11 = 11.sp;
 final double kFontSize12 = 12.sp;
+final double kFontSize13 = 13.sp;
 final double kFontSize14 = 14.sp;
 final double kFontSize15 = 15.sp;
 final double kFontSize16 = 16.sp;

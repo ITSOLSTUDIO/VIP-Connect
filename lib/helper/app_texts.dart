@@ -51,9 +51,17 @@ class AppTexts {
   static const String onBoarding1 =
       "The Security Industry's End User Community";
 
+  //Chats
+  static const String chats = "Chats";
+  static const String createNewGroup = "Create New Group";
+  static const String groups = "Groups";
+  static const String newGroup = "New Group";
+  static const String addGroup = "Add Group";
+
   //Vip Screen
   static const String vipConnections = "My VIP Connections";
   static const String searchParticipants = "Search Participants";
+  static const String typeGroupName = "Type group name";
   static const String connect = "Connect";
 
   //Profile Screen
@@ -71,6 +79,9 @@ class AppTexts {
   static const String inviteYourFriendsSubtitle =
       "Share link and invite friends";
   static const String privacyPolicy = "Privacy policy";
+  static const String typeAMessage = "Type a message";
+  static const String participants = "Participants";
+  static const String addParticipants = "Add Participants";
 
   //Dummy Text
   static const String dummyPostDescription =

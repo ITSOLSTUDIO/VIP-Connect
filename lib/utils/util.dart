@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:vip_connect/constants.dart';
+import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
+import 'package:vip_connect/screens/components/spacer.dart';
 
 class Util {
   static void hideKeyboard(BuildContext context) {
@@ -108,5 +112,92 @@ class Util {
 
   static void dismiss() {
     EasyLoading.dismiss();
+  }
+
+  static void showAttachmentBottomSheet() {
+    Get.bottomSheet(
+      barrierColor: AppColors.transparent,
+      Container(
+        margin: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 72.h),
+        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 18.w),
+        height: 223.h,
+        decoration: BoxDecoration(
+          color: AppColors.border,
+          borderRadius: BorderRadius.circular(kBorderRadius20),
+        ),
+        child: Wrap(
+          children: [
+            CustomIconAndTextButtom(
+              title: "Picture",
+              svgPath: AppAssets.imageSvg,
+              onTap: () {},
+            ),
+            CustomIconAndTextButtom(
+              title: "Video",
+              svgPath: AppAssets.videoCameraSvg,
+              onTap: () {},
+            ),
+            CustomIconAndTextButtom(
+              title: "Document",
+              svgPath: AppAssets.fileSvg,
+              onTap: () {},
+            ),
+            CustomIconAndTextButtom(
+              title: "Location",
+              svgPath: AppAssets.locationSvg,
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomIconAndTextButtom extends StatelessWidget {
+  CustomIconAndTextButtom({
+    Key? key,
+    required this.title,
+    required this.svgPath,
+    required this.onTap,
+  }) : super(key: key);
+  String title, svgPath;
+  VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.only(left: 19.w, right: 19.w, bottom: 23.w),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ClipOval(
+              child: Container(
+                height: 56.h,
+                width: 56.h,
+                color: AppColors.secondary,
+                child: Center(
+                  child: SvgPicture.asset(
+                    svgPath,
+                    color: AppColors.dashboardIcons,
+                    height: 24.h,
+                    width: 24.w,
+                  ),
+                ),
+              ),
+            ),
+            VerticalSpacer(height: 6.h),
+            Text(
+              title,
+              style: AppTextStyle.popping14_600.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

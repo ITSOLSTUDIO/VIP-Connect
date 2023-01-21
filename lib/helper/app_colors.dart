@@ -16,8 +16,13 @@ class AppColors {
   static const Color border = Color(0xFF5A5A5A);
   static const Color white300 = Color(0xFFDADBDC);
   static const Color white500 = Color(0xFF979899);
+  static const Color black400 = Color(0xFFA3A3A3);
+  static const Color black500 = Color(0xFF1D1D1D);
+  static const Color black600 = Color(0xFF0C0C0C);
+  static const Color black700 = Color(0xFF484848);
   static const Color black800 = Color(0xFF2B2B2B);
   static const Color dashboardIcons = Color(0xFF979899);
+  static const Color icons1 = Color(0xFF5E5F5F);
 
   //Text Color
   static const Color primaryText = Color(0xFF001833);
