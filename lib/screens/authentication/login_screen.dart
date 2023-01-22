@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                   Get.toNamed(routeForgetPassword);
                 },
                 child: Text(
-                  "Forget Password?",
+                  "Forgot Password?",
                   style: AppTextStyle.bodyMedium,
                 )),
             VerticalSpacer(height: 24.h),

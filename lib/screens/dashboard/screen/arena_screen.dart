@@ -60,7 +60,9 @@ class ArenaScreen extends StatelessWidget {
                       svgData: AppAssets.bellSvg,
                       isFill: true,
                       iconColor: AppColors.red,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(routeNotificationScreen);
+                      },
                     ),
                   ],
                 ),
@@ -76,7 +78,9 @@ class ArenaScreen extends StatelessWidget {
                     child: CustomPost(
                       onTapLiked: () {},
                       onTapDisLiked: () {},
-                      onTapComment: () {},
+                      onTapComment: () {
+                        Get.toNamed(routeCommentPost);
+                      },
                       onTapShare: () {
                         Get.toNamed(routeSharePost);
                       },

@@ -26,7 +26,7 @@ class NewPasswordScreen extends StatelessWidget {
           children: [
             VerticalSpacer(height: 24.h),
             Text(
-              "Enter your email and we will send you a link to reset your password.",
+              "Enter your New Password.",
               style: AppTextStyle.bodyRegular
                   .copyWith(color: AppColors.disableText),
             ),

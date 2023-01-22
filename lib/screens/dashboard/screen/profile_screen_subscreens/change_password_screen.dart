@@ -43,7 +43,7 @@ class ChangePasswordScreen extends StatelessWidget {
             VerticalSpacer(height: 16.h),
             CustomTextField(
               mainTitle: AppTexts.confirmNewPassword,
-              hintText: AppTexts.yourPassword,
+              hintText: AppTexts.confirmNewPassword,
               obscureText: true,
               filled: true,
               fillColor: AppColors.primary,

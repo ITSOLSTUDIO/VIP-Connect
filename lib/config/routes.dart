@@ -9,6 +9,7 @@ import 'package:vip_connect/screens/dashboard/dashboard.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/message_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/new_group_name_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/new_group_screen.dart';
+import 'package:vip_connect/screens/dashboard/screen/notification/notification_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/change_email_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/change_password_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/invite_friend_screen.dart';
@@ -16,6 +17,9 @@ import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/p
 import 'package:vip_connect/screens/dashboard/screen/profile_screen_subscreens/update_profile_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/vip_screen_subscreen/vip_detail.dart';
 import 'package:vip_connect/screens/onboarding/onboarding.dart';
+import 'package:vip_connect/screens/post/comment_post.dart';
+import 'package:vip_connect/screens/post/create_poll_screen.dart';
+import 'package:vip_connect/screens/post/publish_article_screen.dart';
 import 'package:vip_connect/screens/post/share_post.dart';
 import 'package:vip_connect/utils/keyboard_dismiss.dart';
 
@@ -39,6 +43,10 @@ const routeUpdateProfile = '/routeUpdateProfile';
 const routeMessage = '/routeMessage';
 const routeNewGroup = '/routeNewGroup';
 const routeNewGroupName = '/routeNewGroupName';
+const routeNotificationScreen = '/routeNotificationScreen';
+const routeCommentPost = '/routeCommentPost';
+const routePublicArticle = '/routePublicArticle';
+const routeCreatePoll = '/routeCreatePoll';
 
 class Routes {
   static final routes = [
@@ -76,6 +84,19 @@ class Routes {
     GetPage(
         name: routeNewGroupName,
         page: () => const TKDismiss(NewGroupNameScreen())),
+    GetPage(
+      name: routeNotificationScreen,
+      page: () => const TKDismiss(
+        NotificationScreen(),
+      ),
+    ),
+    GetPage(
+        name: routeCommentPost,
+        page: () => const TKDismiss(CommentPostScreen())),
+    GetPage(
+        name: routePublicArticle,
+        page: () => const TKDismiss(PublishArticleScreen())),
+    GetPage(name: routeCreatePoll, page: () => TKDismiss(CreatePollScreen())),
   ];
 }
 

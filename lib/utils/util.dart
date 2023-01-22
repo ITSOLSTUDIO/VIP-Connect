@@ -1,12 +1,18 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:vip_connect/config/routes.dart';
 import 'package:vip_connect/constants.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
+import 'package:vip_connect/helper/app_texts.dart';
+import 'package:vip_connect/screens/components/common_button.dart';
+import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
 class Util {
@@ -152,6 +158,176 @@ class Util {
       ),
     );
   }
+
+  static void showAddPostBottomSheet() {
+    Get.bottomSheet(
+      Scaffold(
+        bottomNavigationBar: Container(
+          color: AppColors.secondary,
+          padding: EdgeInsets.only(
+            left: 20.w,
+            right: 20.w,
+            bottom: Get.context != null
+                ? MediaQuery.of(Get.context!).viewInsets.bottom == 0
+                    ? 22.h
+                    : MediaQuery.of(Get.context!).viewInsets.bottom
+                : 22.h,
+          ),
+          child: Row(
+            children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(AppAssets.videoCameraSvg)),
+              IconButton(
+                  onPressed: () {}, icon: SvgPicture.asset(AppAssets.imageSvg)),
+              IconButton(
+                  onPressed: () {
+                    showListOfNewPostOptionsBottomSheet();
+                  },
+                  icon: SvgPicture.asset(AppAssets.moreHorizontalSvg)),
+            ],
+          ),
+        ),
+        body: Container(
+          color: AppColors.secondary,
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VerticalSpacer(height: 60.h),
+              IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                splashRadius: 20.r,
+                icon: SvgPicture.asset(AppAssets.closeSvg),
+              ),
+              VerticalSpacer(height: 80.h),
+              CustomTextField(
+                mainTitle: AppTexts.whatDoYouWantToTalkAbout,
+                hideMainTitle: true,
+                disableBorder: true,
+                hintText: AppTexts.whatDoYouWantToTalkAbout,
+                hintTextStyle: AppTextStyle.bodyRegular.copyWith(
+                  color: AppColors.white500,
+                ),
+                filled: false,
+                onSaved: (String? newValue) {},
+                validator: (String? value) {},
+              ),
+              VerticalSpacer(height: 220.h),
+              CommonButton(
+                title: AppTexts.post,
+                iconData: '',
+                isFill: true,
+                isIconVisible: false,
+                onPressed: () {
+                  Get.back();
+                },
+                iconColor: AppColors.transparent,
+                buttonShouldDisable: false,
+              ),
+            ],
+          ),
+        ),
+      ),
+      enableDrag: false,
+      isDismissible: false,
+      ignoreSafeArea: false,
+      isScrollControlled: true,
+      persistent: false,
+    );
+  }
+
+  static void showListOfNewPostOptionsBottomSheet() {
+    List<String> listOfSvg = [
+      AppAssets.articleSvg,
+      AppAssets.imageSvg,
+      AppAssets.videoCameraSvg,
+      AppAssets.fileSvg,
+      AppAssets.pollSvg,
+    ];
+
+    List<String> listOfTitle = [
+      AppTexts.publishArticle,
+      AppTexts.picture,
+      AppTexts.video,
+      AppTexts.document,
+      AppTexts.takePoll,
+    ];
+    List<VoidCallback> listOfOnTap = [
+      () {
+        Get.offNamed(routePublicArticle);
+      },
+      () {
+        Get.back();
+        Get.offNamed(routeCreatePoll);
+      },
+      () {
+        log("V");
+      },
+      () {
+        log("D");
+      },
+      () {
+        log("TP");
+      },
+    ];
+    Get.bottomSheet(
+      Container(
+        height: 338.h,
+        decoration: BoxDecoration(
+          color: AppColors.border,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(kBorderRadius20),
+          ),
+        ),
+        child: Column(
+          children: [
+            VerticalSpacer(height: 17.h),
+            Container(
+              height: 5.h,
+              width: 99.w,
+              decoration: BoxDecoration(
+                color: AppColors.secondary,
+                borderRadius: BorderRadius.circular(kBorderRadius8),
+              ),
+            ),
+            VerticalSpacer(height: 12.h),
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
+                  child: InkWell(
+                    onTap: listOfOnTap[index],
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(listOfSvg[index]),
+                        HorizontalSpacer(width: 15.w),
+                        Text(
+                          listOfTitle[index],
+                          style: AppTextStyle.popping12_400,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            )
+          ],
+        ),
+      ),
+      barrierColor: AppColors.transparent,
+      ignoreSafeArea: false,
+      isScrollControlled: false,
+      persistent: true,
+    );
+  }
 }
 
 class CustomIconAndTextButtom extends StatelessWidget {
@@ -181,7 +357,7 @@ class CustomIconAndTextButtom extends StatelessWidget {
                 child: Center(
                   child: SvgPicture.asset(
                     svgPath,
-                    color: AppColors.dashboardIcons,
+                    color: AppColors.white500,
                     height: 24.h,
                     width: 24.w,
                   ),

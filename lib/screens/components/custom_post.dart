@@ -92,19 +92,37 @@ class CustomPost extends StatelessWidget {
                         SvgPicture.asset(
                           AppAssets.worldSvg,
                           color: AppColors.primary,
-                          height: 10.h,
-                          width: 10.w,
+                          height: 12.h,
+                          width: 12.w,
                         )
                       ],
                     )
                   ],
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                splashRadius: 20.r,
+              PopupMenuButton(
+                color: AppColors.border,
                 icon: SvgPicture.asset(AppAssets.moreVerticalSvg),
-              )
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<int>(
+                      value: 0,
+                      child: Text(
+                        AppTexts.edit,
+                        style: AppTextStyle.popping14_600,
+                      ),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 1,
+                      child: Text(
+                        AppTexts.delete,
+                        style: AppTextStyle.popping14_600,
+                      ),
+                    ),
+                  ];
+                },
+                onSelected: (value) {},
+              ),
             ],
           ),
           VerticalSpacer(height: 12.h),

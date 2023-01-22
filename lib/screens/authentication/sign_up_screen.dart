@@ -19,14 +19,14 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String dropdownValue = 'Gaming/Casinos';
+  String? dropdownValue = "Entertainment/Amusement Parks";
   bool addIndustryField = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      appBar: customAppBar(title: AppTexts.signUpClose),
+      appBar: customAppBar(title: AppTexts.signUp),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
@@ -116,16 +116,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   dropdownValue = newValue!;
                 });
               },
+              isExpanded: true,
               items: <String>[
-                'Gaming/Casinos',
-                'Retail/Asset Protection',
-                'Healthcare',
-                'Education'
+                "Entertainment/Amusement Parks",
+                "Professional Sports",
+                "3PL",
+                "Aviation",
+                "Public Safety",
+                "Automotive",
+                "Construction",
+                "Cannabis",
+                "Oil & Gas",
+                "Telecommunication",
+                "Critical Infrastructure",
+                "Transportation",
+                "Technology",
+                "Government",
+                "Hospitality",
+                "Security/Surveillance",
+                "IT",
+                "Marketing",
               ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(
                     value,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontSize: 20),
                   ),
                 );

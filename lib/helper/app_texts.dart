@@ -19,7 +19,7 @@ class AppTexts {
   static const String password = "Password";
   static const String confirmPassword = "Confirm Password";
   static const String confirmNewPassword = "Confirm New Password";
-  static const String otpVerification = "Otp Verification";
+  static const String otpVerification = "OTP Verification";
   static const String emailAddress = "Email Address";
   static const String enterOtp = "Enter Otp";
   static const String firstName = "First Name";
@@ -29,6 +29,18 @@ class AppTexts {
   static const String bio = "Bio";
   static const String addBio = "Add Bio";
   static const String addExperience = "Add Experience";
+  static const String publishArticle = "Publish Article";
+  static const String publish = "Publish";
+  static const String headline = "Headline";
+  static const String picture = "Picture";
+  static const String video = "Video";
+  static const String document = "Document";
+  static const String takePoll = "Take a poll";
+  static const String yourQuestion = "Your question";
+  static const String addQuestion = "Add question";
+  static const String option = "Option";
+  static const String addOption = "Add option";
+  static const String pollDuration = "Poll duration";
 
   static const String industry = "Industry";
   static const String addIndustry = "Add Industry";
@@ -37,7 +49,7 @@ class AppTexts {
 
   static const String enterEmail = "Enter Email";
   static const String signUpClose = "Signup";
-  static const String searchUserTopic = "Search users,topic";
+  static const String searchUserTopic = "Search users, topics";
   static const String sharePost = "Share Post";
   static const String writeSomeThing = "Write something...";
   static const String post = "Post";
@@ -46,6 +58,8 @@ class AppTexts {
   static const String deleteAccount = "Delete Account";
   static const String logout = "Logout";
   static const String other = "Other";
+  static const String whatDoYouWantToTalkAbout =
+      "What do you want to talk about?";
 
   //OnBoarding
   static const String onBoarding1 =
@@ -54,6 +68,7 @@ class AppTexts {
   //Chats
   static const String chats = "Chats";
   static const String createNewGroup = "Create New Group";
+  static const String createAPoll = "Create a poll";
   static const String groups = "Groups";
   static const String newGroup = "New Group";
   static const String addGroup = "Add Group";
@@ -70,7 +85,7 @@ class AppTexts {
   static const String changePassword = "Change Password";
   static const String changeEmail = "Change Email";
 
-  static const String inviteYourFriends = "Invite your friends";
+  static const String inviteYourFriends = "Invite Your Friends";
   static const String privacy = "Privacy";
 
   static const String updateProfileSubtitle = "Update username,location, etc";
@@ -82,6 +97,13 @@ class AppTexts {
   static const String typeAMessage = "Type a message";
   static const String participants = "Participants";
   static const String addParticipants = "Add Participants";
+  static const String notifications = "Notifications";
+  static const String todays = "Today’s";
+  static const String yesterday = "Yesterday";
+  static const String addAComment = "Add a comment";
+  static const String edit = "Edit";
+  static const String delete = "Delete";
+  static const String markAsRead = "Mark as read";
 
   //Dummy Text
   static const String dummyPostDescription =

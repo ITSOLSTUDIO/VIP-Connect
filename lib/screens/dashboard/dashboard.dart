@@ -77,7 +77,7 @@ class _DashboardState extends State<Dashboard> {
                     svgLists[index],
                     color: dashboardController.currentIndex.value == index
                         ? AppColors.primary
-                        : AppColors.dashboardIcons,
+                        : AppColors.white500,
                     height: 24.h,
                     width: 24.w,
                   ),

@@ -39,6 +39,7 @@ class AppAssets {
   static const String imageSvg = "${assetsSvg}image.svg";
   static const String shareSvg = "${assetsSvg}share.svg";
   static const String moreVerticalSvg = "${assetsSvg}moreVertical.svg";
+  static const String moreHorizontalSvg = "${assetsSvg}more-horizontal.svg";
   static const String messageSquareSvg = "${assetsSvg}messageSquare.svg";
   static const String bellSvg = "${assetsSvg}bell.svg";
   static const String sendSvg = "${assetsSvg}send.svg";
@@ -62,6 +63,11 @@ class AppAssets {
   static const String onlineUserSvg = "${assetsSvg}onlineUser.svg";
   static const String checkmarkCircleSvg = "${assetsSvg}checkmarkCircle.svg";
   static const String checkmarkSvg = "${assetsSvg}checkmark.svg";
+  static const String articleSvg = "${assetsSvg}Article.svg";
+  static const String pollSvg = "${assetsSvg}poll.svg";
+  static const String emptyImageSvg = "${assetsSvg}emptyImage.svg";
+  static const String editSvg = "${assetsSvg}edit.svg";
+  static const String trashSvg = "${assetsSvg}trash.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";

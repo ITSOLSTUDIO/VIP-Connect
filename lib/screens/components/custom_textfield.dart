@@ -29,6 +29,7 @@ class CustomTextField extends StatefulWidget {
     this.autoValidateMode,
     this.onChanged,
     this.maxLines,
+    this.height,
     this.disableBorder,
     this.fillColor,
     this.filled,
@@ -49,6 +50,7 @@ class CustomTextField extends StatefulWidget {
   final String? prefixText;
   final TextInputType? textInputType;
   final int? maxLines;
+  final double? height;
   final TextStyle? textStyle, hintTextStyle;
   final List<TextInputFormatter>? inputFormatters;
   bool? readOnly, obscureText, enabled, disableBorder, filled, autoFocused;
@@ -71,6 +73,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.hideMainTitle == null || widget.hideMainTitle == false)
@@ -81,7 +84,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
         if (widget.hideMainTitle == null || widget.hideMainTitle == false)
           VerticalSpacer(height: 10.h),
         SizedBox(
-          height: widget.maxLines != null && widget.maxLines! > 1 ? null : 56.h,
+          height: widget.maxLines != null && widget.maxLines! > 1
+              ? null
+              : widget.height ?? 56.h,
           child: TextFormField(
             maxLines: widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
             enabled: widget.enabled,
@@ -123,7 +128,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
               border: widget.disableBorder == true
-                  ? null
+                  ? InputBorder.none
                   : OutlineInputBorder(
                       borderSide: const BorderSide(
                         color: AppColors.primary,
@@ -159,8 +164,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                         splashRadius: 20.h,
                         icon: Icon(
                           hidePassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                              ? Icons.visibility_off
+                              : Icons.visibility,
                           color: AppColors.secondary,
                         ),
                         color: AppColors.primary,

@@ -9,7 +9,6 @@ import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
 import 'package:vip_connect/screens/components/common_button.dart';
-import 'package:vip_connect/screens/components/custom_appbar.dart';
 import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
@@ -20,15 +19,17 @@ class VipScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      appBar: customAppBar(
-        title: AppTexts.vipConnections,
-        hideBackButton: true,
-        centerTitle: false,
-      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            VerticalSpacer(height: 68.h),
+            Text(
+              AppTexts.vipConnections,
+              style: AppTextStyle.rubik12_600.copyWith(fontSize: kFontSize20),
+            ),
+            VerticalSpacer(height: 17.h),
             CustomTextField(
               mainTitle: AppTexts.searchParticipants,
               hideMainTitle: true,
@@ -50,7 +51,6 @@ class VipScreen extends StatelessWidget {
               onSaved: (String? newValue) {},
               validator: (String? value) {},
             ),
-            VerticalSpacer(height: 22.h),
             GridView.builder(
               shrinkWrap: true,
               itemCount: 6,
@@ -100,7 +100,7 @@ class VipScreen extends StatelessWidget {
                                     width: 66.w,
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
