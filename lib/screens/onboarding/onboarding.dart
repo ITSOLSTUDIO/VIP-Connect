@@ -116,6 +116,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ],
             ),
             Container(
+              height: 224.h,
               width: double.infinity,
               margin: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
               padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -125,13 +126,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               child: Column(
                 children: [
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 15.h, horizontal: 16.w),
-                    child: Text(
-                      AppTexts.onBoarding1,
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle.h3.copyWith(height: 1.3.h),
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 15.h, horizontal: 16.w),
+                      child: Text(
+                        currentPage == 0 ? AppTexts.onBoarding1 : currentPage == 1 ? AppTexts.onBoarding2 : AppTexts.onBoarding3,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle.h3.copyWith(height: 1.3.h),
+                      ),
                     ),
                   ),
                   VerticalSpacer(

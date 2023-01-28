@@ -43,7 +43,7 @@ class MessageScreen extends StatelessWidget {
         child: TextFormField(
           maxLines: 1,
           decoration: InputDecoration(
-            fillColor: AppColors.black600,
+            fillColor: AppColors.white500,
             filled: true,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.r),
@@ -61,12 +61,14 @@ class MessageScreen extends StatelessWidget {
             ),
             hintText: AppTexts.typeAMessage,
             prefixIcon: GestureDetector(
-              onTap: () {
-                print("Tapped");
-              },
+              onTap: () {},
               child: Padding(
                 padding: EdgeInsets.only(
-                    top: 16.h, left: 15.w, bottom: 16.h, right: 10.w),
+                  top: 16.h,
+                  left: 15.w,
+                  bottom: 16.h,
+                  right: 10.w,
+                ),
                 child: SvgPicture.asset(
                   AppAssets.smileSvg,
                   color: AppColors.icons1,
@@ -144,7 +146,7 @@ class MessageScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: dummyMessageList[index].from == "me"
                           ? AppColors.blackHalfText
-                          : AppColors.black500,
+                          : AppColors.white500,
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(10.r),
                         topLeft: Radius.circular(10.r),

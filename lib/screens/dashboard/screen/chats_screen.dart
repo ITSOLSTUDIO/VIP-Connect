@@ -131,7 +131,7 @@ class CustomChatListTile extends StatelessWidget {
                   Text(
                     "Don’t miss to attend the meeting.",
                     style: AppTextStyle.bodyRegular
-                        .copyWith(fontSize: kFontSize14),
+                        .copyWith(color: AppColors.white500,fontSize: kFontSize14),
                   ),
                 ],
               ),
@@ -141,6 +141,7 @@ class CustomChatListTile extends StatelessWidget {
                 Text(
                   "2 min ago",
                   style: AppTextStyle.bodyRegular.copyWith(
+                    color: AppColors.white500,
                     fontSize: kFontSize14,
                   ),
                 ),

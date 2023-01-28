@@ -145,7 +145,7 @@ class CustomPost extends StatelessWidget {
           if (hideBelowImage == null || hideBelowImage == false) ...{
             VerticalSpacer(height: 12.h),
             Text(
-              "12.K Likes 120 Comments 600 Shares",
+              "12.K Likes  120 Comments  600 Shares",
               style: AppTextStyle.bodyRegular.copyWith(
                 fontSize: kFontSize12,
                 color: AppColors.white300,
@@ -159,7 +159,7 @@ class CustomPost extends StatelessWidget {
                 children: [
                   CommonIconAndTextButton(
                     height: 22.h,
-                    text: 'Liked',
+                    text: 'Like',
                     iconSize16: true,
                     svgData: AppAssets.maskGroupSvg,
                     isFill: true,
@@ -169,7 +169,7 @@ class CustomPost extends StatelessWidget {
                   HorizontalSpacer(width: 15.w),
                   CommonIconAndTextButton(
                     height: 22.h,
-                    text: 'Disliked',
+                    text: 'Dislike',
                     iconSize16: true,
                     svgData: AppAssets.maskGroup1Svg,
                     isFill: true,

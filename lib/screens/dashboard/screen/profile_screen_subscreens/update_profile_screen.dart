@@ -73,7 +73,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 24.h),
             CustomTextField(
               mainTitle: AppTexts.firstName,
-              hintText: AppTexts.firstName,
+              hintText: AppTexts.enter + AppTexts.firstName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -82,7 +82,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.lastName,
-              hintText: AppTexts.lastName,
+              hintText: AppTexts.enter + AppTexts.lastName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -91,7 +91,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.jobTitle,
-              hintText: AppTexts.jobTitle,
+              hintText: AppTexts.enter + AppTexts.designation,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -100,7 +100,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.industry,
-              hintText: AppTexts.industry,
+              hintText: AppTexts.enter + AppTexts.companyName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -109,7 +109,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.bio,
-              hintText: AppTexts.bio,
+              hintText: AppTexts.addExperience,
               obscureText: false,
               maxLines: 4,
               filled: true,

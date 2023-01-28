@@ -7,6 +7,8 @@ class AppTexts {
 
   //Common
   static const String signUp = "Sign Up";
+  static const String signIn = "Sign In";
+
   static const String login = "Login";
   static const String resetPassword = "Reset Password";
   static const String save = "Save";
@@ -23,9 +25,15 @@ class AppTexts {
   static const String emailAddress = "Email Address";
   static const String enterOtp = "Enter Otp";
   static const String firstName = "First Name";
+  static const String enterYour = "Enter your ";
+  static const String enter = "Enter ";
   static const String lastName = "Last Name";
   static const String jobTitle = "Job Title";
+  static const String designation = "Designation";
+
   static const String employer = "Employer";
+  static const String companyName = "Company Name";
+
   static const String bio = "Bio";
   static const String addBio = "Add Bio";
   static const String addExperience = "Add Experience";
@@ -58,12 +66,22 @@ class AppTexts {
   static const String deleteAccount = "Delete Account";
   static const String logout = "Logout";
   static const String other = "Other";
+  static const String allUsers = "All Users";
+  static const String usersRequests = "Users Requests";
+  static const String settings = "Settings";
+
   static const String whatDoYouWantToTalkAbout =
       "What do you want to talk about?";
 
   //OnBoarding
   static const String onBoarding1 =
       "The Security Industry's End User Community";
+  static const String onBoarding2 = "Share Best Practices";
+  static const String onBoarding3 =
+      "Connect & Collaborate with End Users Globally";
+
+  //Arena
+  static const String arena = "Arena";
 
   //Chats
   static const String chats = "Chats";
@@ -72,9 +90,11 @@ class AppTexts {
   static const String groups = "Groups";
   static const String newGroup = "New Group";
   static const String addGroup = "Add Group";
+  static const String groupName = "Group Name";
 
   //Vip Screen
-  static const String vipConnections = "My VIP Connections";
+  static const String myVipConnections = "My VIP Connections";
+  static const String vipConnections = "VIP Connections";
   static const String searchParticipants = "Search Participants";
   static const String typeGroupName = "Type group name";
   static const String connect = "Connect";

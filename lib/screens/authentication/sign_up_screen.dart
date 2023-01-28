@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 24.h),
             CustomTextField(
               mainTitle: AppTexts.firstName,
-              hintText: AppTexts.firstName,
+              hintText: AppTexts.enterYour + AppTexts.firstName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -51,7 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.lastName,
-              hintText: AppTexts.lastName,
+              hintText: AppTexts.enterYour + AppTexts.lastName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -60,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.jobTitle,
-              hintText: AppTexts.jobTitle,
+              hintText: AppTexts.enterYour + AppTexts.designation,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -69,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.employer,
-              hintText: AppTexts.employer,
+              hintText: AppTexts.enterYour + AppTexts.companyName,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -77,7 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             VerticalSpacer(height: 10.h),
             CustomTextField(
-              mainTitle: AppTexts.addBio,
+              mainTitle: AppTexts.bio,
               hintText: AppTexts.addExperience,
               maxLines: 4,
               filled: true,
@@ -93,6 +93,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             VerticalSpacer(height: 10.h),
             DropdownButtonFormField(
+              menuMaxHeight: 300.h,
+              alignment: AlignmentDirectional.topStart,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
@@ -109,6 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 filled: true,
                 fillColor: AppColors.primary,
               ),
+              borderRadius: BorderRadius.circular(kBorderRadius20),
               dropdownColor: AppColors.primary,
               value: dropdownValue,
               onChanged: (String? newValue) {
@@ -142,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Text(
                     value,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 20),
+                    style: AppTextStyle.bodyRegular,
                   ),
                 );
               }).toList(),
@@ -189,7 +192,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             VerticalSpacer(height: 10.h),
             CustomTextField(
-              mainTitle: AppTexts.enterEmail,
+              mainTitle: AppTexts.emailAddress,
               hintText: AppTexts.enterEmail,
               filled: true,
               fillColor: AppColors.primary,
@@ -209,7 +212,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.confirmPassword,
-              hintText: AppTexts.confirmPassword,
+              hintText: AppTexts.enter + AppTexts.confirmPassword,
               obscureText: true,
               filled: true,
               fillColor: AppColors.primary,
@@ -245,7 +248,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Text(
                     " ${AppTexts.login}",
                     style: AppTextStyle.bodyMedium.copyWith(
-                      color: AppColors.button,
+                      color: AppColors.primary,
                     ),
                   ),
                 ),

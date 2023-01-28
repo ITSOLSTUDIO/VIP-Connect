@@ -60,8 +60,8 @@ class CustomListTile2 extends StatelessWidget {
                   VerticalSpacer(height: 5.h),
                   Text(
                     subtitle,
-                    style: AppTextStyle.bodyRegular
-                        .copyWith(fontSize: kFontSize11),
+                    style: AppTextStyle.bodyRegular.copyWith(
+                        color: AppColors.white500, fontSize: kFontSize11),
                   ),
                 ],
               ),

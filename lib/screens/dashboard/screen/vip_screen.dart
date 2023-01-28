@@ -9,6 +9,7 @@ import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
 import 'package:vip_connect/screens/components/common_button.dart';
+import 'package:vip_connect/screens/components/custom_appbar.dart';
 import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
@@ -18,39 +19,50 @@ class VipScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(
+        title: AppTexts.vipConnections,
+        hideBackButton: true,
+        bottom: PreferredSize(
+          preferredSize: Size(double.infinity, 60.h),
+          child: Padding(
+            padding: EdgeInsets.only(left: 24.w, right: 19.w),
+            child: Column(
+              children: [
+                VerticalSpacer(height: 20.h),
+                CustomTextField(
+                  mainTitle: AppTexts.searchParticipants,
+                  hideMainTitle: true,
+                  hintText: AppTexts.searchParticipants,
+                  hintTextStyle: AppTextStyle.bodyRegular.copyWith(
+                    color: AppColors.white500,
+                  ),
+                  filled: true,
+                  fillColor: AppColors.primary,
+                  prefixWidget: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    child: SvgPicture.asset(
+                      AppAssets.maskGroup2Svg,
+                      color: AppColors.secondary,
+                      height: 24.h,
+                      width: 24.h,
+                    ),
+                  ),
+                  onSaved: (String? newValue) {},
+                  validator: (String? value) {},
+                ),
+                VerticalSpacer(height: 4.h),
+              ],
+            ),
+          ),
+        ),
+      ),
       backgroundColor: AppColors.secondary,
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VerticalSpacer(height: 68.h),
-            Text(
-              AppTexts.vipConnections,
-              style: AppTextStyle.rubik12_600.copyWith(fontSize: kFontSize20),
-            ),
-            VerticalSpacer(height: 17.h),
-            CustomTextField(
-              mainTitle: AppTexts.searchParticipants,
-              hideMainTitle: true,
-              hintText: AppTexts.searchParticipants,
-              hintTextStyle: AppTextStyle.bodyRegular.copyWith(
-                color: AppColors.white500,
-              ),
-              filled: true,
-              fillColor: AppColors.primary,
-              prefixWidget: Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                child: SvgPicture.asset(
-                  AppAssets.maskGroup2Svg,
-                  color: AppColors.secondary,
-                  height: 24.h,
-                  width: 24.h,
-                ),
-              ),
-              onSaved: (String? newValue) {},
-              validator: (String? value) {},
-            ),
+            VerticalSpacer(height: 18.h),
             GridView.builder(
               shrinkWrap: true,
               itemCount: 6,

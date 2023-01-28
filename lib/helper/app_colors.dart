@@ -24,6 +24,7 @@ class AppColors {
   static const Color black800 = Color(0xFF2B2B2B);
   static const Color icons1 = Color(0xFF5E5F5F);
   static const Color randomColor1 = Color(0xFFDADADA);
+  static const Color randomColor2 = Color(0xFF231F20);
 
   //Text Color
   static const Color primaryText = Color(0xFF001833);

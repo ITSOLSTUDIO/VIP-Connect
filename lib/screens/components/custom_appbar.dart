@@ -7,7 +7,7 @@ PreferredSizeWidget customAppBar(
     {required String title,
     bool? hideBackButton,
     bool? centerTitle,
-    List<Widget>? action}) {
+    List<Widget>? action,PreferredSize? bottom}) {
   return AppBar(
     backgroundColor: AppColors.secondary,
     elevation: 0,
@@ -31,5 +31,6 @@ PreferredSizeWidget customAppBar(
       style: AppTextStyle.h3.copyWith(color: AppColors.white300),
     ),
     actions: action,
+    bottom: bottom,
   );
 }

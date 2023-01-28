@@ -58,7 +58,7 @@ class OtpScreen extends StatelessWidget {
                     color: AppColors.primary,
                   ),
                 ),
-                Text(" Resent it",
+                Text(" Resend it",
                     style: AppTextStyle.bodyRegular.copyWith(
                       color: AppColors.primary,
                       fontWeight: FontWeight.w700,

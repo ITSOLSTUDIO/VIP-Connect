@@ -11,12 +11,14 @@ class CommonButton extends StatelessWidget {
   final Color? iconColor, textColor, borderColor, bgColor;
   final void Function() onPressed;
   bool buttonShouldDisable = false;
+  bool? isWeb;
   double? height, borderRadius;
   EdgeInsets? padding;
   TextStyle? style;
 
   CommonButton({
     Key? key,
+    this.isWeb,
     this.iconColor,
     this.textColor,
     this.borderColor,
@@ -34,7 +36,66 @@ class CommonButton extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return isWeb ?? false ? ElevatedButton(
+      style: ButtonStyle(
+        minimumSize:
+        MaterialStateProperty.all(Size(double.infinity, height ?? 56)),
+        elevation: MaterialStateProperty.all(0),
+        padding: MaterialStateProperty.all(
+          padding ?? const EdgeInsets.symmetric(horizontal: 22, vertical: 11),
+        ),
+        //Fixed Size set
+        // fixedSize: MaterialStateProperty.all( Size(double.infinity,48)),
+        backgroundColor: isFill
+            ? bgColor != null
+            ? MaterialStateProperty.all(bgColor)
+            : (buttonShouldDisable)
+            ? MaterialStateProperty.all(AppColors.disableButton)
+            : MaterialStateProperty.all(AppColors.button)
+            : MaterialStateProperty.all(AppColors.secondary),
+        splashFactory: buttonShouldDisable ? NoSplash.splashFactory : null,
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius:
+            BorderRadius.circular(borderRadius ?? kBorderRadius20),
+            side: BorderSide(
+              color: isFill
+                  ? buttonShouldDisable
+                  ? AppColors.disableButton
+                  : borderColor ?? AppColors.button
+                  : borderColor ?? AppColors.primary,
+            ),
+          ),
+        ),
+        //minimumSize: MaterialStateProperty.all(Size(double.infinity, 48.h)),
+      ),
+      onPressed: buttonShouldDisable ? () {} : onPressed,
+      child: Row(
+        mainAxisAlignment: isIconVisible
+            ? MainAxisAlignment.spaceBetween
+            : MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: style ??
+                AppTextStyle.web2.copyWith(
+                  color: buttonShouldDisable
+                      ? AppColors.disableText
+                      : textColor ?? AppColors.primary,
+                ),
+          ),
+          isIconVisible
+              ? Image.asset(
+            iconData,
+            color:
+            buttonShouldDisable ? AppColors.disableText : iconColor,
+            height: 24,
+            width: 24,
+          )
+              : const SizedBox(),
+        ],
+      ),
+    ) : ElevatedButton(
       style: ButtonStyle(
         minimumSize:
             MaterialStateProperty.all(Size(double.infinity, height ?? 56.h)),

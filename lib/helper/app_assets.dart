@@ -68,6 +68,8 @@ class AppAssets {
   static const String emptyImageSvg = "${assetsSvg}emptyImage.svg";
   static const String editSvg = "${assetsSvg}edit.svg";
   static const String trashSvg = "${assetsSvg}trash.svg";
+  static const String peopleSvg = "${assetsSvg}people.svg";
+  static const String settingsSvg = "${assetsSvg}settings.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";

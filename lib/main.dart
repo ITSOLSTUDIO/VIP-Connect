@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             },
             theme: kAppTheme,
             getPages: Routes.routes,
-            initialRoute: routeSplash,
+            initialRoute: GetPlatform.isWeb ? routeLoginWeb : routeSplash,
             defaultTransition: Transition.native,
             transitionDuration: const Duration(milliseconds: 400),
             // initialRoute: AddPetsScreen.routeName,

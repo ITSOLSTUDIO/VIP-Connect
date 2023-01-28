@@ -47,7 +47,7 @@ class NewGroupNameScreen extends StatelessWidget {
                       AppAssets.imageSvg,
                       height: 32.h,
                       width: 32.w,
-                      color: AppColors.white,
+                      color: AppColors.randomColor2,
                     ),
                   ),
                 ),
@@ -57,7 +57,7 @@ class NewGroupNameScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        AppTexts.addGroup,
+                        AppTexts.groupName,
                         style: AppTextStyle.bodyRegular.copyWith(
                           color: AppColors.primary,
                         ),

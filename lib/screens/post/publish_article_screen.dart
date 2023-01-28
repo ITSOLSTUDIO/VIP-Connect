@@ -30,7 +30,8 @@ class PublishArticleScreen extends StatelessWidget {
             Text(
               AppTexts.headline,
               style: AppTextStyle.bodyRegular
-                  .copyWith(fontWeight: FontWeight.w500),
+                  .copyWith(                    color: AppColors.white500,
+                  fontWeight: FontWeight.w500),
             ),
             VerticalSpacer(height: 32.h),
             Container(

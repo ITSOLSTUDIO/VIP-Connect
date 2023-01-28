@@ -64,7 +64,8 @@ class CustomListTile extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyle.bodyRegular
-                        .copyWith(fontSize: kFontSize14),
+                        .copyWith(                    color: AppColors.white500,
+                        fontSize: kFontSize14),
                   ),
                 ],
               ),

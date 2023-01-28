@@ -81,11 +81,7 @@ class ProfileScreen extends StatelessWidget {
               VerticalSpacer(height: 22.h),
               Text(
                 AppTexts.profile,
-                style: AppTextStyle.h3.copyWith(
-                  fontSize: kFontSize20,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.white300,
-                ),
+                style: AppTextStyle.h3.copyWith(color: AppColors.white300),
               ),
               VerticalSpacer(height: 12.h),
               Text(

@@ -1,15 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 import 'app_colors.dart';
 
 class AppTextStyle {
+  static double fontSizeExtraSmall = Get.context !=null && Get.context!.width >= 1300 ? 14 : 10;
+  static double fontSizeSmall =  Get.context !=null && Get.context!.width >= 1300 ? 16 : 12;
+  static double fontSizeDefault =  Get.context !=null && Get.context!.width >= 1300 ? 18 : 14;
+  static double fontSizeLarge =  Get.context !=null && Get.context!.width >= 1300 ? 20 : 16;
+  static double fontSizeExtraLarge =  Get.context !=null && Get.context!.width >= 1300 ? 24 : 18;
+  static double fontSizeOverLarge =  Get.context !=null && Get.context!.width >= 1300 ? 48 : 40;
+
+  //Web
+  static final TextStyle web1 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: fontSizeOverLarge,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
+  );
+  static final TextStyle web2 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: fontSizeDefault,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary,
+  );
+  static final TextStyle web3 = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: fontSizeExtraSmall,
+    fontWeight: FontWeight.w500,
+    color: AppColors.secondary,
+  );
+
+  static final TextStyle h3Web = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: fontSizeExtraLarge,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primaryText,
+  );
+
+  static final TextStyle bodyRegularWeb = TextStyle(
+    fontFamily: 'Rubik',
+    fontSize: fontSizeSmall,
+    fontWeight: FontWeight.w400,
+    color: AppColors.button,
+  );
+
+  //Mobile
   static final TextStyle h3 = TextStyle(
     fontFamily: 'Rubik',
     fontSize: kFontSize24,
     fontWeight: FontWeight.w500,
     color: AppColors.primaryText,
   );
+
+
 
   static final TextStyle bodyMedium = TextStyle(
     fontFamily: 'Rubik',
@@ -24,6 +69,8 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.button,
   );
+
+
 
   static final TextStyle rubik12_600 = TextStyle(
     fontFamily: 'Rubik',

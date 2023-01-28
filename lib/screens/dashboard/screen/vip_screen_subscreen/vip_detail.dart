@@ -112,7 +112,8 @@ class VipDetail extends StatelessWidget {
                     VerticalSpacer(height: 24.h),
                     Text(
                       AppTexts.lorumIpsum,
-                      style: AppTextStyle.bodyRegular,
+                      style: AppTextStyle.bodyRegular.copyWith(                    color: AppColors.white500,
+                      ),
                     ),
                     const Spacer(),
                     SizedBox(

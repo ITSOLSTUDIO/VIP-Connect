@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:vip_connect/config/routes.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_texts.dart';
@@ -46,7 +47,7 @@ class ChangeEmailScreen extends StatelessWidget {
               isFill: true,
               isIconVisible: false,
               onPressed: () {
-                Get.back();
+                Get.offNamed(routeOtp);
               },
               iconColor: AppColors.transparent,
               buttonShouldDisable: false,

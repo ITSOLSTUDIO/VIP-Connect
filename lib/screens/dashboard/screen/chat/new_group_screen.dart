@@ -159,10 +159,18 @@ class CustomImageWithClose extends StatelessWidget {
           Positioned(
               right: 0,
               bottom: 0,
-              child: SvgPicture.asset(
-                AppAssets.crossCircleSvg,
+              child: SizedBox(
                 height: 24.h,
                 width: 24.h,
+                child: CircleAvatar(
+                  backgroundColor: AppColors.white,
+                  child: SvgPicture.asset(
+                    AppAssets.closeSvg,
+                    color: AppColors.black,
+                    height: 14.h,
+                    width: 14.h,
+                  ),
+                ),
               ))
         ],
       ),
