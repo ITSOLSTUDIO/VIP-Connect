@@ -16,7 +16,8 @@ class ChatsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: customAppBar(title: AppTexts.chats, hideBackButton: true),
+        appBar:
+            customAppBar(title: AppTexts.channelGroups, hideBackButton: true),
         backgroundColor: AppColors.secondary,
         body: SingleChildScrollView(
           padding: EdgeInsets.only(left: 24.w, right: 17.w),
@@ -47,7 +48,7 @@ class ChatsScreen extends StatelessWidget {
                       width: 17.w,
                     ),
                     Text(
-                      AppTexts.createNewGroup,
+                      AppTexts.createNewChannel,
                       style: AppTextStyle.rubik12_600
                           .copyWith(fontSize: kFontSize16),
                     ),
@@ -56,7 +57,7 @@ class ChatsScreen extends StatelessWidget {
               ),
               VerticalSpacer(height: 13.h),
               Text(
-                AppTexts.groups,
+                AppTexts.channels,
                 style: AppTextStyle.rubik12_600.copyWith(fontSize: kFontSize20),
               ),
               VerticalSpacer(height: 11.h),
@@ -72,7 +73,7 @@ class ChatsScreen extends StatelessWidget {
               ),
               VerticalSpacer(height: 8.h),
               Text(
-                AppTexts.chats,
+                AppTexts.directMessage,
                 style: AppTextStyle.rubik12_600.copyWith(fontSize: kFontSize20),
               ),
               VerticalSpacer(height: 11.h),
@@ -130,8 +131,8 @@ class CustomChatListTile extends StatelessWidget {
                   VerticalSpacer(height: 5.h),
                   Text(
                     "Don’t miss to attend the meeting.",
-                    style: AppTextStyle.bodyRegular
-                        .copyWith(color: AppColors.white500,fontSize: kFontSize14),
+                    style: AppTextStyle.bodyRegular.copyWith(
+                        color: AppColors.white500, fontSize: kFontSize14),
                   ),
                 ],
               ),

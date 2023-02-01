@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:vip_connect/constants.dart';
+import 'package:vip_connect/controller/dashboard_controller.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
@@ -236,7 +237,7 @@ class _CreatePollScreenState extends State<CreatePollScreen> {
                                       splashRadius: 20,
                                       onPressed: () {},
                                       icon: SvgPicture.asset(
-                                        AppAssets.editSvg,
+                                        AppAssets.trashSvg,
                                         height: 24.h,
                                         width: 24.w,
                                       ),
@@ -287,7 +288,7 @@ class _CreatePollScreenState extends State<CreatePollScreen> {
                 if (showPollPostView.isFalse) {
                   showPollPostView.value = true;
                 } else {
-                  Get.back();
+                  Get.find<DashboardController>().updateCurrentIndex(0);
                   Get.back();
                 }
                 // Get.back();

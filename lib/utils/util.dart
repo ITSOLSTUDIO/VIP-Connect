@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -253,7 +251,7 @@ class Util {
       AppTexts.picture,
       AppTexts.video,
       AppTexts.document,
-      AppTexts.takePoll,
+      AppTexts.createAPoll,
     ];
     List<VoidCallback> listOfOnTap = [
       () {
@@ -261,16 +259,16 @@ class Util {
       },
       () {
         Get.back();
+      },
+      () {
+        Get.back();
+      },
+      () {
+        Get.back();
+      },
+      () {
+        Get.back();
         Get.offNamed(routeCreatePoll);
-      },
-      () {
-        log("V");
-      },
-      () {
-        log("D");
-      },
-      () {
-        log("TP");
       },
     ];
     Get.bottomSheet(

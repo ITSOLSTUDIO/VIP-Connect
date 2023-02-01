@@ -33,17 +33,20 @@ class AppTexts {
 
   static const String employer = "Employer";
   static const String companyName = "Company Name";
+  static const String company = "Company";
+  static const String termsOfServicesPrivacyPolicy =
+      "Terms of Services & Privacy Policy";
 
   static const String bio = "Bio";
   static const String addBio = "Add Bio";
-  static const String addExperience = "Add Experience";
+  static const String addExperience = "Add Your Experience";
   static const String publishArticle = "Publish Article";
   static const String publish = "Publish";
   static const String headline = "Headline";
   static const String picture = "Picture";
   static const String video = "Video";
   static const String document = "Document";
-  static const String takePoll = "Take a poll";
+  static const String createAPoll = "Create a poll";
   static const String yourQuestion = "Your question";
   static const String addQuestion = "Add question";
   static const String option = "Option";
@@ -58,6 +61,9 @@ class AppTexts {
   static const String enterEmail = "Enter Email";
   static const String signUpClose = "Signup";
   static const String searchUserTopic = "Search users, topics";
+  static const String searchConnectionsChannels =
+      "Search connections, channels";
+  static const String searchConnections = "Search Connections";
   static const String sharePost = "Share Post";
   static const String writeSomeThing = "Write something...";
   static const String post = "Post";
@@ -82,12 +88,17 @@ class AppTexts {
 
   //Arena
   static const String arena = "Arena";
+  static const String theArena = "The Arena";
 
   //Chats
   static const String chats = "Chats";
+  static const String directMessage = "Direct Message ";
+  static const String channelGroups = "Channel Groups";
   static const String createNewGroup = "Create New Group";
-  static const String createAPoll = "Create a poll";
+  static const String createNewChannel = "Create New Channel";
   static const String groups = "Groups";
+  static const String channels = "Channels";
+
   static const String newGroup = "New Group";
   static const String addGroup = "Add Group";
   static const String groupName = "Group Name";
@@ -119,11 +130,13 @@ class AppTexts {
   static const String addParticipants = "Add Participants";
   static const String notifications = "Notifications";
   static const String todays = "Today’s";
+  static const String news = "New";
   static const String yesterday = "Yesterday";
   static const String addAComment = "Add a comment";
   static const String edit = "Edit";
   static const String delete = "Delete";
   static const String markAsRead = "Mark as read";
+  static const String connectionRequestSent = "Connection Request Sent";
 
   //Dummy Text
   static const String dummyPostDescription =

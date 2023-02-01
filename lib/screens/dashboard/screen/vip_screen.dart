@@ -12,6 +12,7 @@ import 'package:vip_connect/screens/components/common_button.dart';
 import 'package:vip_connect/screens/components/custom_appbar.dart';
 import 'package:vip_connect/screens/components/custom_textfield.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
+import 'package:vip_connect/utils/util.dart';
 
 class VipScreen extends StatelessWidget {
   const VipScreen({Key? key}) : super(key: key);
@@ -30,9 +31,9 @@ class VipScreen extends StatelessWidget {
               children: [
                 VerticalSpacer(height: 20.h),
                 CustomTextField(
-                  mainTitle: AppTexts.searchParticipants,
+                  mainTitle: AppTexts.searchConnections,
                   hideMainTitle: true,
-                  hintText: AppTexts.searchParticipants,
+                  hintText: AppTexts.searchConnections,
                   hintTextStyle: AppTextStyle.bodyRegular.copyWith(
                     color: AppColors.white500,
                   ),
@@ -136,7 +137,7 @@ class VipScreen extends StatelessWidget {
                                 style: AppTextStyle.popping12_400,
                               ),
                               CustomIconAndText(
-                                title: "Copmany Inc",
+                                title: "${AppTexts.industry} Inc",
                                 imagePath: AppAssets.dummyPostImg,
                                 style: AppTextStyle.popping12_300,
                               ),
@@ -164,7 +165,10 @@ class VipScreen extends StatelessWidget {
                                 borderColor: AppColors.primary,
                                 isIconVisible: false,
                                 style: AppTextStyle.rubik12_600,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Util.showToast(
+                                      AppTexts.connectionRequestSent);
+                                },
                                 iconColor: AppColors.transparent,
                                 buttonShouldDisable: false,
                               ),

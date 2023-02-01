@@ -53,12 +53,12 @@ class OtpScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Didn't received yet?",
+                  "Didn't receive?",
                   style: AppTextStyle.bodyRegular.copyWith(
                     color: AppColors.primary,
                   ),
                 ),
-                Text(" Resend it",
+                Text(" Resend Here",
                     style: AppTextStyle.bodyRegular.copyWith(
                       color: AppColors.primary,
                       fontWeight: FontWeight.w700,

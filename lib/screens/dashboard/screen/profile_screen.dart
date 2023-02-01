@@ -46,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
 
   final List<String> otherTileTitle = [
     AppTexts.inviteYourFriends,
-    AppTexts.privacy
+    AppTexts.termsOfServicesPrivacyPolicy
   ];
 
   final List<String> otherTileSubTitle = [
@@ -78,10 +78,11 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              VerticalSpacer(height: 22.h),
-              Text(
-                AppTexts.profile,
-                style: AppTextStyle.h3.copyWith(color: AppColors.white300),
+              Center(
+                child: Text(
+                  AppTexts.profile,
+                  style: AppTextStyle.h3.copyWith(color: AppColors.white300),
+                ),
               ),
               VerticalSpacer(height: 12.h),
               Text(

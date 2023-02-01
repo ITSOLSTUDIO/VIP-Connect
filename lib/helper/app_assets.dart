@@ -70,6 +70,10 @@ class AppAssets {
   static const String trashSvg = "${assetsSvg}trash.svg";
   static const String peopleSvg = "${assetsSvg}people.svg";
   static const String settingsSvg = "${assetsSvg}settings.svg";
+  static const String logoutSvg = "${assetsSvg}logout.svg";
+  static const String leftIconSvg = "${assetsSvg}leftIcon.svg";
+  static const String rightIconSvg = "${assetsSvg}rightIcon.svg";
+  static const String eyeSvg = "${assetsSvg}eye.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";

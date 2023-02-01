@@ -26,7 +26,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           children: [
             VerticalSpacer(height: 24.h),
             Text(
-              "Enter your email and we will send you OTP verification code on your Email Address.",
+              "Enter your email and an OTP verification code will be sent to your Email Address.",
               style: AppTextStyle.bodyRegular
                   .copyWith(color: AppColors.disableText),
             ),

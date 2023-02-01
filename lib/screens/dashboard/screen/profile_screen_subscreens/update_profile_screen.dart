@@ -91,7 +91,7 @@ class UpdateProfileScreen extends StatelessWidget {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.jobTitle,
-              hintText: AppTexts.enter + AppTexts.designation,
+              hintText: AppTexts.enter + AppTexts.jobTitle,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -99,7 +99,7 @@ class UpdateProfileScreen extends StatelessWidget {
             ),
             VerticalSpacer(height: 10.h),
             CustomTextField(
-              mainTitle: AppTexts.industry,
+              mainTitle: AppTexts.company,
               hintText: AppTexts.enter + AppTexts.companyName,
               filled: true,
               fillColor: AppColors.primary,

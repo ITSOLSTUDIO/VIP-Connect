@@ -5,9 +5,7 @@ import 'package:vip_connect/screens/authentication/login_screen.dart';
 import 'package:vip_connect/screens/authentication/new_password_screen.dart';
 import 'package:vip_connect/screens/authentication/otp_screen.dart';
 import 'package:vip_connect/screens/authentication/sign_up_screen.dart';
-import 'package:vip_connect/screens/authentication/web/login_screen_web.dart';
 import 'package:vip_connect/screens/dashboard/dashboard.dart';
-import 'package:vip_connect/screens/dashboard/dashboard_web.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/message_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/new_group_name_screen.dart';
 import 'package:vip_connect/screens/dashboard/screen/chat/new_group_screen.dart';
@@ -23,6 +21,8 @@ import 'package:vip_connect/screens/post/comment_post.dart';
 import 'package:vip_connect/screens/post/create_poll_screen.dart';
 import 'package:vip_connect/screens/post/publish_article_screen.dart';
 import 'package:vip_connect/screens/post/share_post.dart';
+import 'package:vip_connect/screens/web/dashboard_web.dart';
+import 'package:vip_connect/screens/web/login_screen_web.dart';
 import 'package:vip_connect/utils/keyboard_dismiss.dart';
 
 import '../screens/splash/splash.dart';
@@ -103,10 +103,8 @@ class Routes {
     GetPage(name: routeCreatePoll, page: () => TKDismiss(CreatePollScreen())),
 
     //Web Screens
-    GetPage(name: routeLoginWeb, page: () => const TKDismiss(LoginScreenWeb())),
+    GetPage(name: routeLoginWeb, page: () => TKDismiss(LoginScreenWeb())),
     GetPage(name: routeDashboardWeb, page: () => TKDismiss(DashboardWeb())),
-
-
   ];
 }
 

@@ -34,6 +34,8 @@ final double kFontSize26 = 26.sp;
 final double kFontSize28 = 28.sp;
 final double kFontSize30 = 30.sp;
 final double kFontSize34 = 34.sp;
+final double kFontSize42 = 42.sp;
+final double kFontSize48 = 48.sp;
 
 // Radius
 final double kBorderRadius4 = 4.r;

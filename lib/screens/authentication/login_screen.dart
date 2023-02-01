@@ -87,11 +87,16 @@ class LoginScreen extends StatelessWidget {
                   style: AppTextStyle.bodyMedium,
                 )),
             VerticalSpacer(height: 24.h),
-            Text(
-              "By continuing, you agree to the Terms of Services & Privacy Policy.",
-              textAlign: TextAlign.center,
-              style:
-                  AppTextStyle.bodyRegular.copyWith(color: AppColors.primary),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(routePrivacyPolicy);
+              },
+              child: Text(
+                "By continuing, you agree to the Terms of Services & Privacy Policy.",
+                textAlign: TextAlign.center,
+                style:
+                    AppTextStyle.bodyRegular.copyWith(color: AppColors.primary),
+              ),
             ),
             VerticalSpacer(height: 72.h),
             Row(
@@ -114,6 +119,7 @@ class LoginScreen extends StatelessWidget {
                     style: AppTextStyle.h3.copyWith(
                       fontSize: kFontSize14,
                       color: AppColors.blackHalfText,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

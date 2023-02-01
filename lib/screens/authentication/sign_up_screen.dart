@@ -19,7 +19,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String? dropdownValue = "Entertainment/Amusement Parks";
+  String? dropdownValue;
   bool addIndustryField = false;
 
   @override
@@ -60,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.jobTitle,
-              hintText: AppTexts.enterYour + AppTexts.designation,
+              hintText: AppTexts.enterYour + AppTexts.jobTitle,
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -69,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             VerticalSpacer(height: 10.h),
             CustomTextField(
               mainTitle: AppTexts.employer,
-              hintText: AppTexts.enterYour + AppTexts.companyName,
+              hintText: "${AppTexts.enterYour}${AppTexts.employer} Name",
               filled: true,
               fillColor: AppColors.primary,
               onSaved: (String? newValue) {},
@@ -121,24 +121,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
               },
               isExpanded: true,
               items: <String>[
-                "Entertainment/Amusement Parks",
-                "Professional Sports",
                 "3PL",
                 "Aviation",
-                "Public Safety",
                 "Automotive",
                 "Construction",
                 "Cannabis",
-                "Oil & Gas",
-                "Telecommunication",
                 "Critical Infrastructure",
-                "Transportation",
-                "Technology",
+                "Entertainment/Amusement Parks",
                 "Government",
+                "Gaming",
+                "Retail",
+                "Education Industries",
                 "Hospitality",
-                "Security/Surveillance",
                 "IT",
                 "Marketing",
+                "Security/Surveillance",
+                "Technology",
+                "Transportation",
+                "Telecommunication",
+                "Oil & Gas",
+                "Professional Sports",
+                "Public Safety",
               ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,

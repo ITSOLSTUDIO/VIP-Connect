@@ -21,7 +21,7 @@ class ArenaScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: customAppBar(
-          title: AppTexts.arena,
+          title: AppTexts.theArena,
           hideBackButton: true,
           centerTitle: true,
           bottom: PreferredSize(
@@ -38,9 +38,9 @@ class ArenaScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: CustomTextField(
-                            mainTitle: AppTexts.searchUserTopic,
+                            mainTitle: AppTexts.searchConnectionsChannels,
                             hideMainTitle: true,
-                            hintText: AppTexts.searchUserTopic,
+                            hintText: AppTexts.searchConnectionsChannels,
                             hintTextStyle: AppTextStyle.bodyRegular.copyWith(
                               color: AppColors.white500,
                             ),

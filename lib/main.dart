@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' as isWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
             builder: (context, child) {
               ScreenUtil.init(
                 context,
-                designSize: const Size(375, 812),
+                designSize:
+                    isWeb.kIsWeb ? Size(1440, 1082) : const Size(375, 812),
               );
               child = easyLoading(context, child);
               Util.setEasyLoading();

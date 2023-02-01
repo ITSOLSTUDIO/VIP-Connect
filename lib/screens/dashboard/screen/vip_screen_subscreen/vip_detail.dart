@@ -9,6 +9,7 @@ import 'package:vip_connect/screens/components/common_button.dart';
 import 'package:vip_connect/screens/components/custom_appbar.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 import 'package:vip_connect/screens/dashboard/screen/vip_screen.dart';
+import 'package:vip_connect/utils/util.dart';
 
 class VipDetail extends StatelessWidget {
   const VipDetail({Key? key}) : super(key: key);
@@ -112,7 +113,8 @@ class VipDetail extends StatelessWidget {
                     VerticalSpacer(height: 24.h),
                     Text(
                       AppTexts.lorumIpsum,
-                      style: AppTextStyle.bodyRegular.copyWith(                    color: AppColors.white500,
+                      style: AppTextStyle.bodyRegular.copyWith(
+                        color: AppColors.white500,
                       ),
                     ),
                     const Spacer(),
@@ -130,7 +132,9 @@ class VipDetail extends StatelessWidget {
                         isIconVisible: false,
                         style: AppTextStyle.rubik12_600
                             .copyWith(fontSize: kFontSize18),
-                        onPressed: () {},
+                        onPressed: () {
+                          Util.showToast(AppTexts.connectionRequestSent);
+                        },
                         iconColor: AppColors.transparent,
                         buttonShouldDisable: false,
                       ),

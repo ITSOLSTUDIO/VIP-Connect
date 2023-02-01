@@ -24,7 +24,7 @@ class NotificationScreen extends StatelessWidget {
           children: [
             VerticalSpacer(height: 22.h),
             Text(
-              AppTexts.todays,
+              AppTexts.news,
               style: AppTextStyle.h3.copyWith(
                 fontSize: kFontSize20,
                 fontWeight: FontWeight.w500,

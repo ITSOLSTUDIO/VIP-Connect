@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vip_connect/constants.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
@@ -54,7 +55,13 @@ class CustomTextField extends StatefulWidget {
   final double? height;
   final TextStyle? textStyle, hintTextStyle;
   final List<TextInputFormatter>? inputFormatters;
-  bool? readOnly, obscureText, enabled, disableBorder, filled, autoFocused, isWeb;
+  bool? readOnly,
+      obscureText,
+      enabled,
+      disableBorder,
+      filled,
+      autoFocused,
+      isWeb;
   FormFieldValidator<String>? validator;
   FormFieldSetter<String>? onSaved, onFieldSubmit;
   VoidCallback? onTap;
@@ -73,284 +80,300 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.isWeb??false ? Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (widget.hideMainTitle == null || widget.hideMainTitle == false)
-          Text(
-            widget.mainTitle,
-            style: AppTextStyle.web2.copyWith(fontWeight: FontWeight.w400,),
-          ),
-        if (widget.hideMainTitle == null || widget.hideMainTitle == false)
-          const VerticalSpacer(height: 10),
-        SizedBox(
-          height: widget.maxLines != null && widget.maxLines! > 1
-              ? null
-              :  56,
-          child: TextFormField(
-            maxLines: widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
-            enabled: widget.enabled,
-            initialValue: widget.initialText,
-            controller: widget.controller,
-            style: widget.textStyle ?? AppTextStyle.bodyRegularWeb,
-            obscureText: (widget.obscureText ?? false) ? hidePassword : false,
-            onChanged: widget.onChanged,
-            cursorColor: widget.cursorColor ?? AppColors.primary,
-            autovalidateMode: widget.autoValidateMode,
-            keyboardType: widget.textInputType,
-            inputFormatters: widget.inputFormatters,
-            autofocus: widget.autoFocused ?? false,
-            decoration: InputDecoration(
-              fillColor: widget.fillColor,
-              filled: widget.filled,
-              focusedBorder: widget.disableBorder == true
-                  ? null
-                  : OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColors.primary,
-                ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              hintStyle: widget.hintTextStyle ??
-                  AppTextStyle.bodyRegularWeb.copyWith(color: AppColors.hintText),
-              contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical:
-                  (widget.prefixWidget != null && widget.maxLines != null)
-                      ? 0
-                      : 16),
-              enabledBorder: widget.disableBorder == true
-                  ? null
-                  : OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColors.primary,
-                ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              border: widget.disableBorder == true
-                  ? InputBorder.none
-                  : OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColors.primary,
-                ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                  color: AppColors.red,
-                ),
-              ),
-              errorStyle: AppTextStyle.h3Web.copyWith(color: AppColors.red),
-              alignLabelWithHint: true,
-              labelText: widget.labelText,
-              hintText: widget.hintText,
-              prefixText: widget.prefixText,
-              suffixIcon: widget.obscureText ?? false
-                  ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-                child: IconButton(
-                  onPressed: () {
-                    setState(
-                          () {
-                        if (hidePassword) {
-                          hidePassword = false;
-                        } else {
-                          hidePassword = true;
-                        }
-                      },
-                    );
-                  },
-                  splashRadius: 20,
-                  icon: Icon(
-                    hidePassword
-                        ? Icons.visibility_off
-                        : Icons.visibility,
-                    color: AppColors.secondary,
-                    size: 20,
+    return widget.isWeb ?? false
+        ? Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (widget.hideMainTitle == null || widget.hideMainTitle == false)
+                Text(
+                  widget.mainTitle,
+                  style: AppTextStyle.web2.copyWith(
+                    fontWeight: FontWeight.w400,
                   ),
-                  color: AppColors.primary,
                 ),
-              )
-                  : widget.iconSuffixData != null
-                  ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-
-                child: IconButton(
-                  onPressed: widget.suffixOnTap ?? () {},
-                  splashRadius: 20,
-                  icon: Image.asset(
-                    widget.iconSuffixData!,
-                    height: 20,
-                    width: 20,
-                    color: AppColors.primary,
+              if (widget.hideMainTitle == null || widget.hideMainTitle == false)
+                VerticalSpacer(height: 10.h),
+              SizedBox(
+                height: widget.maxLines != null && widget.maxLines! > 1
+                    ? null
+                    : 56.h,
+                child: TextFormField(
+                  maxLines:
+                      widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
+                  enabled: widget.enabled,
+                  initialValue: widget.initialText,
+                  controller: widget.controller,
+                  style: widget.textStyle ?? AppTextStyle.bodyRegularWeb,
+                  obscureText:
+                      (widget.obscureText ?? false) ? hidePassword : false,
+                  onChanged: widget.onChanged,
+                  cursorColor: widget.cursorColor ?? AppColors.primary,
+                  autovalidateMode: widget.autoValidateMode,
+                  keyboardType: widget.textInputType,
+                  inputFormatters: widget.inputFormatters,
+                  autofocus: widget.autoFocused ?? false,
+                  decoration: InputDecoration(
+                    fillColor: widget.fillColor,
+                    filled: widget.filled,
+                    focusedBorder: widget.disableBorder == true
+                        ? null
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius:
+                                BorderRadius.circular(kBorderRadius20),
+                          ),
+                    hintStyle: widget.hintTextStyle ??
+                        AppTextStyle.bodyRegularWeb
+                            .copyWith(color: AppColors.hintText),
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: (widget.prefixWidget != null &&
+                                widget.maxLines != null)
+                            ? 0
+                            : 16.h),
+                    enabledBorder: widget.disableBorder == true
+                        ? null
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius:
+                                BorderRadius.circular(kBorderRadius20),
+                          ),
+                    border: widget.disableBorder == true
+                        ? InputBorder.none
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius:
+                                BorderRadius.circular(kBorderRadius20),
+                          ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(kBorderRadius20),
+                      borderSide: const BorderSide(
+                        color: AppColors.red,
+                      ),
+                    ),
+                    errorStyle:
+                        AppTextStyle.h3Web.copyWith(color: AppColors.red),
+                    alignLabelWithHint: true,
+                    labelText: widget.labelText,
+                    hintText: widget.hintText,
+                    prefixText: widget.prefixText,
+                    suffixIcon: widget.obscureText ?? false
+                        ? Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16.w, vertical: 0),
+                            child: IconButton(
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    if (hidePassword) {
+                                      hidePassword = false;
+                                    } else {
+                                      hidePassword = true;
+                                    }
+                                  },
+                                );
+                              },
+                              splashRadius: kBorderRadius20,
+                              iconSize: 24.h,
+                              icon: Icon(
+                                hidePassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: AppColors.secondary,
+                              ),
+                              color: AppColors.primary,
+                            ),
+                          )
+                        : widget.iconSuffixData != null
+                            ? Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w, vertical: 16.h),
+                                child: IconButton(
+                                  onPressed: widget.suffixOnTap ?? () {},
+                                  splashRadius: kBorderRadius20,
+                                  icon: Image.asset(
+                                    widget.iconSuffixData!,
+                                    height: 20.h,
+                                    width: 20.h,
+                                    color: AppColors.primary,
+                                  ),
+                                  color: AppColors.primary,
+                                ),
+                              )
+                            : null,
+                    prefixIcon: widget.iconPrefixData != null &&
+                            widget.prefixWidget == null
+                        ? IconButton(
+                            onPressed: widget.suffixOnTap ?? () {},
+                            splashRadius: kBorderRadius20,
+                            icon: Image.asset(
+                              widget.iconPrefixData!,
+                              height: 20.h,
+                              width: 20.h,
+                              color: AppColors.primary,
+                            ),
+                            color: AppColors.primary,
+                          )
+                        : widget.prefixWidget,
                   ),
-                  color: AppColors.primary,
-                ),
-              )
-                  : null,
-              prefixIcon:
-              widget.iconPrefixData != null && widget.prefixWidget == null
-                  ? IconButton(
-                onPressed: widget.suffixOnTap ?? () {},
-                splashRadius: 20,
-                icon: Image.asset(
-                  widget.iconPrefixData!,
-                  height: 20,
-                  width: 20,
-                  color: AppColors.primary,
-                ),
-                color: AppColors.primary,
-              )
-                  : widget.prefixWidget,
-            ),
-            readOnly: widget.readOnly ?? false,
-            onSaved: widget.onSaved,
-            validator: widget.validator,
-            onTap: widget.onTap,
-            onFieldSubmitted: widget.onFieldSubmit,
-          ),
-        ),
-      ],
-    ) : Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (widget.hideMainTitle == null || widget.hideMainTitle == false)
-          Text(
-            widget.mainTitle,
-            style:  AppTextStyle.bodyRegular.copyWith(color: AppColors.primary),
-          ),
-        if (widget.hideMainTitle == null || widget.hideMainTitle == false)
-          VerticalSpacer(height: 10.h),
-        SizedBox(
-          height: widget.maxLines != null && widget.maxLines! > 1
-              ? null
-              : widget.height ?? 56.h,
-          child: TextFormField(
-            maxLines: widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
-            enabled: widget.enabled,
-            initialValue: widget.initialText,
-            controller: widget.controller,
-            style: widget.textStyle ?? AppTextStyle.bodyRegular,
-            obscureText: (widget.obscureText ?? false) ? hidePassword : false,
-            onChanged: widget.onChanged,
-            cursorColor: widget.cursorColor ?? AppColors.primary,
-            autovalidateMode: widget.autoValidateMode,
-            keyboardType: widget.textInputType,
-            inputFormatters: widget.inputFormatters,
-            autofocus: widget.autoFocused ?? false,
-            decoration: InputDecoration(
-              fillColor: widget.fillColor,
-              filled: widget.filled,
-              focusedBorder: widget.disableBorder == true
-                  ? null
-                  : OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-              hintStyle: widget.hintTextStyle ??
-                  AppTextStyle.bodyRegular.copyWith(color: AppColors.hintText),
-              contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16.w,
-                  vertical:
-                      (widget.prefixWidget != null && widget.maxLines != null)
-                          ? 0.h
-                          : 16.h),
-              enabledBorder: widget.disableBorder == true
-                  ? null
-                  : OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-              border: widget.disableBorder == true
-                  ? InputBorder.none
-                  : OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: AppColors.primary,
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.r),
-                borderSide: const BorderSide(
-                  color: AppColors.red,
+                  readOnly: widget.readOnly ?? false,
+                  onSaved: widget.onSaved,
+                  validator: widget.validator,
+                  onTap: widget.onTap,
+                  onFieldSubmitted: widget.onFieldSubmit,
                 ),
               ),
-              errorStyle: AppTextStyle.h3.copyWith(color: AppColors.red),
-              alignLabelWithHint: true,
-              labelText: widget.labelText,
-              hintText: widget.hintText,
-              prefixText: widget.prefixText,
-              suffixIcon: widget.obscureText ?? false
-                  ? Padding(
-                      padding: EdgeInsets.only(right: 4.w),
-                      child: IconButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              if (hidePassword) {
-                                hidePassword = false;
-                              } else {
-                                hidePassword = true;
-                              }
-                            },
-                          );
-                        },
-                        splashRadius: 20.h,
-                        icon: Icon(
-                          hidePassword
-                              ? Icons.visibility_off
-                              : Icons.visibility,
-                          color: AppColors.secondary,
-                        ),
-                        color: AppColors.primary,
+            ],
+          )
+        : Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (widget.hideMainTitle == null || widget.hideMainTitle == false)
+                Text(
+                  widget.mainTitle,
+                  style: AppTextStyle.bodyRegular
+                      .copyWith(color: AppColors.primary),
+                ),
+              if (widget.hideMainTitle == null || widget.hideMainTitle == false)
+                VerticalSpacer(height: 10.h),
+              SizedBox(
+                height: widget.maxLines != null && widget.maxLines! > 1
+                    ? null
+                    : widget.height ?? 56.h,
+                child: TextFormField(
+                  maxLines:
+                      widget.obscureText ?? false ? 1 : widget.maxLines ?? 1,
+                  enabled: widget.enabled,
+                  initialValue: widget.initialText,
+                  controller: widget.controller,
+                  style: widget.textStyle ?? AppTextStyle.bodyRegular,
+                  obscureText:
+                      (widget.obscureText ?? false) ? hidePassword : false,
+                  onChanged: widget.onChanged,
+                  cursorColor: widget.cursorColor ?? AppColors.primary,
+                  autovalidateMode: widget.autoValidateMode,
+                  keyboardType: widget.textInputType,
+                  inputFormatters: widget.inputFormatters,
+                  autofocus: widget.autoFocused ?? false,
+                  decoration: InputDecoration(
+                    fillColor: widget.fillColor,
+                    filled: widget.filled,
+                    focusedBorder: widget.disableBorder == true
+                        ? null
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                    hintStyle: widget.hintTextStyle ??
+                        AppTextStyle.bodyRegular
+                            .copyWith(color: AppColors.hintText),
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: (widget.prefixWidget != null &&
+                                widget.maxLines != null)
+                            ? 0.h
+                            : 16.h),
+                    enabledBorder: widget.disableBorder == true
+                        ? null
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                    border: widget.disableBorder == true
+                        ? InputBorder.none
+                        : OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: AppColors.primary,
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.r),
+                      borderSide: const BorderSide(
+                        color: AppColors.red,
                       ),
-                    )
-                  : widget.iconSuffixData != null
-                      ? Padding(
-                          padding: EdgeInsets.only(right: 4.w),
-                          child: IconButton(
+                    ),
+                    errorStyle: AppTextStyle.h3.copyWith(color: AppColors.red),
+                    alignLabelWithHint: true,
+                    labelText: widget.labelText,
+                    hintText: widget.hintText,
+                    prefixText: widget.prefixText,
+                    suffixIcon: widget.obscureText ?? false
+                        ? Padding(
+                            padding: EdgeInsets.only(right: 4.w),
+                            child: IconButton(
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    if (hidePassword) {
+                                      hidePassword = false;
+                                    } else {
+                                      hidePassword = true;
+                                    }
+                                  },
+                                );
+                              },
+                              splashRadius: 20.h,
+                              icon: Icon(
+                                hidePassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: AppColors.secondary,
+                              ),
+                              color: AppColors.primary,
+                            ),
+                          )
+                        : widget.iconSuffixData != null
+                            ? Padding(
+                                padding: EdgeInsets.only(right: 4.w),
+                                child: IconButton(
+                                  onPressed: widget.suffixOnTap ?? () {},
+                                  splashRadius: 20.h,
+                                  icon: Image.asset(
+                                    widget.iconSuffixData!,
+                                    height: 20.h,
+                                    width: 20.w,
+                                    color: AppColors.primary,
+                                  ),
+                                  color: AppColors.primary,
+                                ),
+                              )
+                            : null,
+                    prefixIcon: widget.iconPrefixData != null &&
+                            widget.prefixWidget == null
+                        ? IconButton(
                             onPressed: widget.suffixOnTap ?? () {},
                             splashRadius: 20.h,
                             icon: Image.asset(
-                              widget.iconSuffixData!,
+                              widget.iconPrefixData!,
                               height: 20.h,
                               width: 20.w,
                               color: AppColors.primary,
                             ),
                             color: AppColors.primary,
-                          ),
-                        )
-                      : null,
-              prefixIcon:
-                  widget.iconPrefixData != null && widget.prefixWidget == null
-                      ? IconButton(
-                          onPressed: widget.suffixOnTap ?? () {},
-                          splashRadius: 20.h,
-                          icon: Image.asset(
-                            widget.iconPrefixData!,
-                            height: 20.h,
-                            width: 20.w,
-                            color: AppColors.primary,
-                          ),
-                          color: AppColors.primary,
-                        )
-                      : widget.prefixWidget,
-            ),
-            readOnly: widget.readOnly ?? false,
-            onSaved: widget.onSaved,
-            validator: widget.validator,
-            onTap: widget.onTap,
-            onFieldSubmitted: widget.onFieldSubmit,
-          ),
-        ),
-      ],
-    );
+                          )
+                        : widget.prefixWidget,
+                  ),
+                  readOnly: widget.readOnly ?? false,
+                  onSaved: widget.onSaved,
+                  validator: widget.validator,
+                  onTap: widget.onTap,
+                  onFieldSubmitted: widget.onFieldSubmit,
+                ),
+              ),
+            ],
+          );
   }
 }
