@@ -3,18 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:vip_connect/constants.dart';
+import 'package:vip_connect/controller/dashboard_controller.dart';
 import 'package:vip_connect/helper/app_assets.dart';
 import 'package:vip_connect/helper/app_colors.dart';
 import 'package:vip_connect/helper/app_text_styles.dart';
 import 'package:vip_connect/helper/app_texts.dart';
 import 'package:vip_connect/screens/components/spacer.dart';
 
-enum SampleItem { itemOne, itemTwo, itemThree }
-
 class WebUserRequests extends StatelessWidget {
   WebUserRequests({Key? key}) : super(key: key);
   RxInt currentIndex = 0.obs;
-  SampleItem? selectedMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -67,15 +65,14 @@ class WebUserRequests extends StatelessWidget {
                           )),
                     ),
                     HorizontalSpacer(width: 13.w),
-                    const Text(
+                    Text(
                       "Jordyn",
-                      style: TextStyle(
-                        color: AppColors.primary,
-                      ),
+                      style: AppTextStyle.web4
+                          .copyWith(fontSize: kFontSize12 + 0.26.sp),
                     ),
                     const Spacer(),
                     PopupMenuButton<dynamic>(
-                      initialValue: selectedMenu,
+                      initialValue: null,
                       // alignment: Alignment.centerRight,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.r),
@@ -89,14 +86,18 @@ class WebUserRequests extends StatelessWidget {
                         color: AppColors.primary,
                       ),
                       onSelected: (dynamic item) {
-                        selectedMenu = item;
+                        // selectedMenu = item;
                       },
                       itemBuilder: (BuildContext context) =>
                           <PopupMenuEntry<dynamic>>[
                         MenuItem(
                           "View User Details",
                           AppAssets.eyeSvg,
-                          () {},
+                          () {
+                            Get.find<DashboardController>()
+                                .updateDashboardWebEnum(
+                                    DashboardWebEnum.showUserDetail);
+                          },
                         ),
                         MenuItem(
                           "Approve",
@@ -111,7 +112,11 @@ class WebUserRequests extends StatelessWidget {
                         MenuItem(
                           "Delete",
                           AppAssets.personSvg,
-                          () {},
+                          () {
+                            Get.find<DashboardController>()
+                                .updateDashboardWebEnum(
+                                    DashboardWebEnum.showUserDelete);
+                          },
                         ),
                       ],
                     ),
@@ -200,9 +205,10 @@ class WebUserRequests extends StatelessWidget {
 }
 
 PopupMenuItem MenuItem(String title, String svgPath, VoidCallback onTap) {
-  return PopupMenuItem<SampleItem>(
+  return PopupMenuItem<String>(
     onTap: onTap,
-    value: SampleItem.itemOne,
+    value: "1",
+    height: 40.h,
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -215,9 +221,7 @@ PopupMenuItem MenuItem(String title, String svgPath, VoidCallback onTap) {
         HorizontalSpacer(width: 12.w),
         Text(
           title,
-          style: AppTextStyle.rubik12_600.copyWith(
-            color: AppColors.primary,
-          ),
+          style: AppTextStyle.web4.copyWith(fontSize: kFontSize12 + 0.26.sp),
         ),
       ],
     ),

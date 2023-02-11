@@ -130,8 +130,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 "Entertainment/Amusement Parks",
                 "Government",
                 "Gaming",
-                "Retail",
-                "Education Industries",
+                "Health Care"
+                    "Retail",
+                "Education",
                 "Hospitality",
                 "IT",
                 "Marketing",

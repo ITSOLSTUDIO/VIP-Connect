@@ -23,6 +23,8 @@ class AppTexts {
   static const String confirmNewPassword = "Confirm New Password";
   static const String otpVerification = "OTP Verification";
   static const String emailAddress = "Email Address";
+  static const String name = "Name";
+
   static const String enterOtp = "Enter Otp";
   static const String firstName = "First Name";
   static const String enterYour = "Enter your ";
@@ -74,7 +76,13 @@ class AppTexts {
   static const String other = "Other";
   static const String allUsers = "All Users";
   static const String usersRequests = "Users Requests";
+  static const String userDetails = "User Details";
   static const String settings = "Settings";
+  static const String blockUser = "Block User";
+  static const String deleteUser = "Delete User";
+  static const String clearNotifications = "Clear Notifications";
+  static const String reject = "Reject";
+  static const String approved = "Approved";
 
   static const String whatDoYouWantToTalkAbout =
       "What do you want to talk about?";
@@ -111,6 +119,7 @@ class AppTexts {
   static const String connect = "Connect";
 
   //Profile Screen
+  static const String update = "Update";
   static const String updateProfile = "Update Profile";
   static const String changeEmailAddress = "Change Email Address";
   static const String changePassword = "Change Password";
@@ -137,6 +146,8 @@ class AppTexts {
   static const String delete = "Delete";
   static const String markAsRead = "Mark as read";
   static const String connectionRequestSent = "Connection Request Sent";
+  static const String loremIpsum =
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap";
 
   //Dummy Text
   static const String dummyPostDescription =

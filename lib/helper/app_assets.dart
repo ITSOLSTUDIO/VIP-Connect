@@ -7,6 +7,7 @@ class AppAssets {
   static const String tempProfileImg = "${assetsImage}temp_profile.png";
   static const String bgImg = "${assetsImage}bg.png";
   static const String linkedinLogoImg = "${assetsImage}linkedinLogo.png";
+  static const String tempProfile2Img = "${assetsImage}tempProfile2.png";
 
   //Svg
   static const String shape1Svg = "${assetsSvg}shape1.svg";
@@ -74,6 +75,9 @@ class AppAssets {
   static const String leftIconSvg = "${assetsSvg}leftIcon.svg";
   static const String rightIconSvg = "${assetsSvg}rightIcon.svg";
   static const String eyeSvg = "${assetsSvg}eye.svg";
+  static const String pickImageCameraSvg = "${assetsSvg}pickImageCamera.svg";
+  static const String checkboxFillSvg = "${assetsSvg}checkbox_fill.svg";
+  static const String checkboxEmptySvg = "${assetsSvg}checkbox_empty.svg";
 
 //Gif
   // static const String logoFillGif = "${assetsGif}FillAnimation.gif";

@@ -28,6 +28,7 @@ final double kFontSize15 = 15.sp;
 final double kFontSize16 = 16.sp;
 final double kFontSize18 = 18.sp;
 final double kFontSize20 = 20.sp;
+final double kFontSize21 = 21.sp;
 final double kFontSize22 = 22.sp;
 final double kFontSize24 = 24.sp;
 final double kFontSize26 = 26.sp;
@@ -45,6 +46,7 @@ final double kBorderRadius10 = 10.r;
 final double kBorderRadius11 = 11.r;
 
 final double kBorderRadius16 = 16.r;
+final double kBorderRadius18 = 18.r;
 final double kBorderRadius20 = 20.r;
 final double kBorderRadius22 = 22.r;
 final double kBorderRadius24 = 24.r;
