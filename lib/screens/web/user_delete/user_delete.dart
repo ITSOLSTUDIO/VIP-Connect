@@ -168,7 +168,7 @@ class UserDelete extends StatelessWidget {
               Expanded(
                 child: CommonButton(
                   isWeb: true,
-                  title: AppTexts.reject,
+                  title: AppTexts.blockUser,
                   iconData: '',
                   isFill: true,
                   isIconVisible: false,
@@ -193,7 +193,7 @@ class UserDelete extends StatelessWidget {
               Expanded(
                 child: CommonButton(
                   isWeb: true,
-                  title: AppTexts.approved,
+                  title: AppTexts.deleteUser,
                   iconData: '',
                   isFill: true,
                   textColor: AppColors.white,

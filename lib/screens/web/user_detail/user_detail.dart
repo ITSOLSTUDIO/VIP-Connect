@@ -168,7 +168,7 @@ class UserDetail extends StatelessWidget {
               Expanded(
                 child: CommonButton(
                   isWeb: true,
-                  title: AppTexts.blockUser,
+                  title: AppTexts.reject,
                   iconData: '',
                   isFill: true,
                   isIconVisible: false,
@@ -193,7 +193,7 @@ class UserDetail extends StatelessWidget {
               Expanded(
                 child: CommonButton(
                   isWeb: true,
-                  title: AppTexts.deleteUser,
+                  title: AppTexts.approved,
                   iconData: '',
                   isFill: true,
                   textColor: AppColors.white,

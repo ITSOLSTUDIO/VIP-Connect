@@ -282,7 +282,11 @@ class WebAllUsers extends StatelessWidget {
                               MenuItem(
                                 AppTexts.blockUser,
                                 AppAssets.personSvg,
-                                () {},
+                                () {
+                                  Get.find<DashboardController>()
+                                      .updateDashboardWebEnum(
+                                          DashboardWebEnum.showUserDelete);
+                                },
                               ),
                             ],
                           ),
